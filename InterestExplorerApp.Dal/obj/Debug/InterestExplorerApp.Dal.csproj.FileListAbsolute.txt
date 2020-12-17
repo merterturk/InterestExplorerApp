@@ -1,0 +1,9 @@
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\bin\Debug\InterestExplorerApp.Dal.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\bin\Debug\InterestExplorerApp.Dal.pdb
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\bin\Debug\InterestExplorerApp.Entities.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\bin\Debug\InterestExplorerApp.Entities.pdb
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.csprojAssemblyReference.cache
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.csproj.CoreCompileInputs.cache
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.csproj.CopyComplete
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.pdb

@@ -1,0 +1,6 @@
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\InterestExplorerApp.Bll.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\InterestExplorerApp.Bll.pdb
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.csprojAssemblyReference.cache
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.csproj.CoreCompileInputs.cache
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.pdb
