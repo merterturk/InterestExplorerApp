@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace InterestExplorerApp.Entities.Abstract
 {
-   public class BaseEntity
+   public abstract class BaseEntity
     {
         public int Id { get; set; }
 
@@ -15,6 +14,8 @@ namespace InterestExplorerApp.Entities.Abstract
         public DateTime? UpdatedDate { get; set; }
 
         public DateTime? DeletedDate { get; set; }
+
+        public bool IsActive { get; set; } = true;
 
     }
 }

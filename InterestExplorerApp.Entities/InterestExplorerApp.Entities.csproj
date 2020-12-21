@@ -42,10 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\BaseEntity.cs" />
+    <Compile Include="Concrete\BaseCategory.cs" />
+    <Compile Include="Concrete\Book.cs" />
+    <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\Movie.cs" />
+    <Compile Include="Concrete\Series.cs" />
+    <Compile Include="Concrete\VideoGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Concrete\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
