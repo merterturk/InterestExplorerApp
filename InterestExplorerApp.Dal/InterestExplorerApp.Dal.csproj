@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
-    <Folder Include="Conrete\" />
+    <Folder Include="Concrete\" />
     <Folder Include="Context\" />
   </ItemGroup>
   <ItemGroup>

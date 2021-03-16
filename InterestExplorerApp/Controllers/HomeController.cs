@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InterestExplorerApp.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

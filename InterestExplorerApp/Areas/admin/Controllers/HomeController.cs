@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace InterestExplorerApp.Areas.admin.Controllers
 {
-    public class AnasayfaController : Controller
+    public class HomeController : Controller
     {
         // GET: admin/Anasayfa
-        public ActionResult Giris()
+        public ActionResult Index()
         {
             return View();
         }
