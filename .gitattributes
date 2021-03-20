@@ -2,4 +2,5 @@
 *.HTML linguist-detectable=false
 *.html linguist-detectable=false
 *.js linguist-detectable=false
+*.scss linguis-detectable=false
 
