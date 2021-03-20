@@ -1,6 +1,7 @@
 ﻿using InterestExplorerApp.Entities.Abstract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,14 @@ namespace InterestExplorerApp.Entities.Concrete
             Series = new List<Series>();
             VideoGames = new List<VideoGame>();
         }
+        [Display(Name="Kategori Adı")]
+        [Required(ErrorMessage ="Kategori ismini giriniz")]
+        [StringLength(150,ErrorMessage ="Kategori İsmi en fazla {0} karakter olmalıdır")]
+        public string CategoryName { get; set; }
 
-        public string Name { get; set; }
+        public int MainCategoryId { get; set; }
 
-        public int BaseCategoryId { get; set; }
-
-        public BaseCategory BaseCategory { get; set; }
+        public virtual MainCategory MainCategory { get; set; }
 
 
         public IList<Book> Books { get; set; }
