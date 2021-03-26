@@ -1,2 +1,2 @@
 # InterestExplorerApp
-## Bitirme Projesi
+## Bitirme Projesi- Geliştirilmeye Devam ediliyor
