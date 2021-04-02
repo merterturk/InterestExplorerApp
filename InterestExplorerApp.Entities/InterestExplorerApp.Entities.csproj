@@ -49,10 +49,17 @@
     <Compile Include="Concrete\Movie.cs" />
     <Compile Include="Concrete\Series.cs" />
     <Compile Include="Concrete\VideoGame.cs" />
+    <Compile Include="DTOs\AdvancedSearchDTO.cs" />
+    <Compile Include="DTOs\BookLongDetailsDTO.cs" />
+    <Compile Include="DTOs\BookShortDetailsDTO.cs" />
+    <Compile Include="DTOs\MovieLongDetailsDTO.cs" />
+    <Compile Include="DTOs\MovieShortDetailsDTO.cs" />
+    <Compile Include="DTOs\SeriesLongDetailsDTO.cs" />
+    <Compile Include="DTOs\SeriesShortDetailsDTO.cs" />
+    <Compile Include="DTOs\VideoGameLongDetailsDTO.cs" />
+    <Compile Include="DTOs\VideoGameShortDetailsDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

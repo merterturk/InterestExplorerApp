@@ -9,36 +9,41 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
 {
     public class EfCategoryDal : ICategoryDal
     {
-        private InterestExplorerContext context = new InterestExplorerContext();
+        private InterestExplorerContext _context = new InterestExplorerContext();
 
         public void Add(Category category)
         {
-            context.Categories.Add(category);
-            context.SaveChanges();
+            _context.Categories.Add(category);
+            _context.SaveChanges();
         }
 
         public void Delete(int categoryId)
         {
-            var deletedCategory = context.Categories.SingleOrDefault(x => x.Id == categoryId);
-            context.Categories.Remove(deletedCategory);
-            context.SaveChanges();
+            var deletedCategory = _context.Categories.SingleOrDefault(x => x.Id == categoryId);
+            _context.Categories.Remove(deletedCategory);
+            _context.SaveChanges();
         }
 
         public List<Category> GetAll()
         {
-            return context.Categories.Include("MainCategory").ToList();
+            return _context.Categories.Include("MainCategory").ToList();
         }
 
-       
 
-    public Category GetById(int categoryId)
-    {
-        return context.Categories.SingleOrDefault(x => x.Id == categoryId);
+
+        public Category GetById(int categoryId)
+        {
+            return _context.Categories.SingleOrDefault(x => x.Id == categoryId);
+        }
+
+        public string GetCategoryNameByCategoryId(int categoryId)
+        {
+            return _context.Categories.SingleOrDefault(x => x.Id == categoryId).CategoryName;
+        }
+
+        public void Update(Category category)
+        {
+
+        }
     }
-
-    public void Update(Category category)
-    {
-
-    }
-}
 }

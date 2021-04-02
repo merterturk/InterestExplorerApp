@@ -12,7 +12,5 @@ C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplo
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\bin\Debug\EntityFramework.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.Migrations.FirstInit.resources
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.Migrations.DatabaseCreated.resources
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.csproj.GenerateResource.cache
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.Migrations.UpdateNameOfColumns.resources
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Dal\obj\Debug\InterestExplorerApp.Dal.Migrations.SecondInit.resources

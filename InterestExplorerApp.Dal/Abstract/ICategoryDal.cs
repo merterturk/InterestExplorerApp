@@ -19,6 +19,8 @@ namespace InterestExplorerApp.Dal.Abstract
 
         void Delete(int categoryId);
 
-      
+
+        string GetCategoryNameByCategoryId(int categoryId);
+
     }
 }

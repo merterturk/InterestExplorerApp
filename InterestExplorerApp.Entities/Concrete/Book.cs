@@ -38,7 +38,5 @@ namespace InterestExplorerApp.Entities.Concrete
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
 
-        [Display(Name="Popüler mi?")]
-        public bool IsPopular { get; set; }
     }
 }

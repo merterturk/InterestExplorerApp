@@ -14,8 +14,6 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
         {
 
         }
-        
-
         public DbSet<Book> Books  { get; set; }
 
         public DbSet<Category> Categories { get; set; }

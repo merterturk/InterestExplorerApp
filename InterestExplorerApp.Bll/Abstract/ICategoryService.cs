@@ -9,5 +9,7 @@ namespace InterestExplorerApp.Bll.Abstract
    public interface ICategoryService
     {
         List<Category> GetAll();
+
+        string GetCategoryNameByCategoryId(int categoryId);
     }
 }

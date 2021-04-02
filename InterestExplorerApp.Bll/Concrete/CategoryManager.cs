@@ -20,5 +20,10 @@ namespace InterestExplorerApp.Bll.Concrete
         {
             return _categoryDal.GetAll();
         }
+
+        public string GetCategoryNameByCategoryId(int categoryId)
+        {
+            return _categoryDal.GetCategoryNameByCategoryId(categoryId);
+        }
     }
 }
