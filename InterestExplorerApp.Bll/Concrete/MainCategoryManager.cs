@@ -10,7 +10,7 @@ using InterestExplorerApp.Entities.DTOs;
 
 namespace InterestExplorerApp.Bll.Concrete
 {
-   public class MainCategoryManager : IMainCategoryService
+    public class MainCategoryManager : IMainCategoryService
     {
         private IMainCategoryDal _mainCategoryDal;
 
@@ -21,11 +21,7 @@ namespace InterestExplorerApp.Bll.Concrete
 
         public AdvancedSearchDTO AdvancedSearch(string search)
         {
-            if (search.Length > 5 && !string.IsNullOrEmpty(search))
-            {
-                return _mainCategoryDal.AdvancedSearch(search);
-            }
-            return null;
+            return _mainCategoryDal.AdvancedSearch(search);
         }
 
         public List<MainCategory> GetAll()

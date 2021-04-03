@@ -33,7 +33,7 @@ namespace InterestExplorerApp.WebUI.Controllers
         {
             if (Id.HasValue)
             {
-                return View(_movieService.GetAllMovieDetailsByMovieId(Id.Value));
+                return View(_movieService.GetMovieDetailsByMovieId(Id.Value));
             }
             return RedirectToAction("PageNotFound", "Error");
            

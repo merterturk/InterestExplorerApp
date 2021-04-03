@@ -30,7 +30,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             
         }
 
-        public MovieLongDetailsDTO GetAllMovieDetailsByMovieId(int Id)
+        public MovieLongDetailsDTO GetMovieDetailsByMovieId(int Id)
         {
             var result = (from m in _context.Movies
                           join c in _context.Categories

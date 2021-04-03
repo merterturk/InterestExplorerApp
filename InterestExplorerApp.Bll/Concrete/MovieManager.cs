@@ -23,9 +23,9 @@ namespace InterestExplorerApp.Bll.Concrete
             return _movieDal.GetAllMovieDetailsByCategoryId(categoryId);
         }
 
-        public MovieLongDetailsDTO GetAllMovieDetailsByMovieId(int Id)
+        public MovieLongDetailsDTO GetMovieDetailsByMovieId(int Id)
         {
-            return _movieDal.GetAllMovieDetailsByMovieId(Id);
+            return _movieDal.GetMovieDetailsByMovieId(Id);
         }
 
         public List<MovieShortDetailsDTO> GetLastAddedRecordDetails()

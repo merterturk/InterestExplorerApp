@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestExplorerApp.Dal", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestExplorerApp.Bll", "InterestExplorerApp.Bll\InterestExplorerApp.Bll.csproj", "{54ECF5FC-396C-4E00-92F1-707A478E2600}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestExplorerApp.WebAPI", "InterestExplorerApp.WebAPI\InterestExplorerApp.WebAPI.csproj", "{FCD21A24-213D-4A7E-BD03-8F220544DE08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{54ECF5FC-396C-4E00-92F1-707A478E2600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54ECF5FC-396C-4E00-92F1-707A478E2600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54ECF5FC-396C-4E00-92F1-707A478E2600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD21A24-213D-4A7E-BD03-8F220544DE08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD21A24-213D-4A7E-BD03-8F220544DE08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD21A24-213D-4A7E-BD03-8F220544DE08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD21A24-213D-4A7E-BD03-8F220544DE08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

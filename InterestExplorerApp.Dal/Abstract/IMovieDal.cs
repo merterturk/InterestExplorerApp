@@ -10,7 +10,7 @@ namespace InterestExplorerApp.Dal.Abstract
     {
         List<MovieShortDetailsDTO> GetAllMovieDetailsByCategoryId(int categoryId);
 
-        MovieLongDetailsDTO GetAllMovieDetailsByMovieId(int Id);
+        MovieLongDetailsDTO GetMovieDetailsByMovieId(int Id);
 
         List<MovieShortDetailsDTO> GetLastAddedRecordDetails();
     }

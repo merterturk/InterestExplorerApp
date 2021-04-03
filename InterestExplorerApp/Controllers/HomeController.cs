@@ -45,13 +45,18 @@ namespace InterestExplorerApp.Controllers
                 case 3: return RedirectToAction("VideoGameList", "VideoGame", new { categoryId = category });
                 case 4: return RedirectToAction("BookList","Book",new {categoryId=category});
             }
-            return View();
+            return RedirectToAction("PageNotFound", "Error");
     
         }
         public ActionResult Search(string search)
         {
+            if (string.IsNullOrEmpty(search))
+            {
+                return RedirectToAction("PageNotFound", "Error");
+            }
             var result = _mainCategoryService.AdvancedSearch(search);
             return View(result);
+            
         }
 
     }
