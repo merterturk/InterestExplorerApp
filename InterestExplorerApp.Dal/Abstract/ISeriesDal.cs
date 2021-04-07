@@ -12,5 +12,9 @@ namespace InterestExplorerApp.Dal.Abstract
         List<SeriesShortDetailsDTO> GetAllSeriesDetailsByCategoryId(int categoryId);
 
         SeriesLongDetailsDTO GetAllSeriesDetailsBySeriesId(int Id);
+
+        List<SeriesShortDetailsDTO> GetLastAddedRecordDetails();
+
+        List<SeriesShortDetailsDTO> GetHighestImdbScore();
     }
 }

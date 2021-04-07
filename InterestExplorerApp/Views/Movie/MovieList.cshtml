@@ -146,9 +146,9 @@
                             </a>
                         </div>
                         <div class="card__content">
-                            <h3 class="card__title"><a href="">@item.MovieName</a></h3>
+                            <h3 class="card__title">@item.MovieName</h3>
                             <span class="card__category">
-                                <a href="#">@item.CategoryName</a>
+                                <a>@item.CategoryName</a>
 
                             </span>
                             <span class="card__rate"><i class="icon ion-ios-star"></i>@item.IMDBScore</span>
@@ -160,7 +160,7 @@
             <!-- paginator -->
             <div class="col-12">
                 @Html.PagedListPager((IPagedList)Model, page => Url.Action("MovieList",
-                       new { categoryId = Request.QueryString["categoryId"], page }), new PagedListRenderOptions
+                       new { categoryId = Request.QueryString["categoryId"], page}), new PagedListRenderOptions
                        {
                            DisplayLinkToFirstPage = PagedListDisplayMode.Never,
                            DisplayLinkToLastPage = PagedListDisplayMode.Never,
@@ -168,13 +168,13 @@
                            DisplayLinkToNextPage = PagedListDisplayMode.Always,
                            MaximumPageNumbersToDisplay = 4
                        })
-                 )
+                )
             </div>
             <!-- end paginator -->
         </div>
     </div>
 </div>
-           
+
 <!-- end catalog -->
 <!-- expected premiere -->
 <section class="section section--bg" data-bg="img/section/section.jpg">
@@ -313,3 +313,14 @@
         </div>
     </div>
 </section>
+<script src="~/Content/js/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".filter__btn").click(function () {
+
+            var value = $('#filter__imbd-start').html();
+            var secondValue = $('#filter__imbd-end').html();
+            alert(value + '-' + secondValue);
+        });
+    });
+</script>

@@ -14,5 +14,8 @@ namespace InterestExplorerApp.Bll.Abstract
         MovieLongDetailsDTO GetMovieDetailsByMovieId(int Id);
 
         List<MovieShortDetailsDTO> GetLastAddedRecordDetails();
+
+        // Get Highest Imdb Score for 12 movie 
+        List<MovieShortDetailsDTO> GetHighestImdbScore();
     }
 }

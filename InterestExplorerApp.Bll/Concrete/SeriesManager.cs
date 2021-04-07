@@ -28,5 +28,15 @@ namespace InterestExplorerApp.Bll.Concrete
         {
             return _seriesDal.GetAllSeriesDetailsBySeriesId(Id);
         }
+
+        public List<SeriesShortDetailsDTO> GetHighestImdbScore()
+        {
+            return _seriesDal.GetHighestImdbScore();
+        }
+
+        public List<SeriesShortDetailsDTO> GetLastAddedRecordDetails()
+        {
+            return _seriesDal.GetLastAddedRecordDetails();
+        }
     }
 }

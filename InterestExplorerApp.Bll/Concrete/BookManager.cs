@@ -28,5 +28,16 @@ namespace InterestExplorerApp.Bll.Concrete
         {
             return _bookDal.GetAllBookDetailsByBookId(Id);
         }
+
+        public void Add(Book book)
+        {
+            
+        }
+
+        public List<BookShortDetailsDTO> GetLastAddedRecordDetails()
+        {
+            return _bookDal.GetLastAddedRecordDetails();
+        }
     }
+    
 }

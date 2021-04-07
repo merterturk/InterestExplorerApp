@@ -13,6 +13,8 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
     {
         private InterestExplorerContext _context = new InterestExplorerContext();
 
+        // Movie,Series,VideoGame, Book advanced searcing 
+
         public AdvancedSearchDTO AdvancedSearch(string search)
         {
             var result = new AdvancedSearchDTO();

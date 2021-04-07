@@ -32,5 +32,10 @@ namespace InterestExplorerApp.Bll.Concrete
         {
             return _movieDal.GetLastAddedRecordDetails();
         }
+
+        public List<MovieShortDetailsDTO> GetHighestImdbScore()
+        {
+            return _movieDal.GetHighestImdbScore();
+        }
     }
 }

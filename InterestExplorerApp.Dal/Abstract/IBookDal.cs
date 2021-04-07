@@ -12,5 +12,7 @@ namespace InterestExplorerApp.Dal.Abstract
         List<BookShortDetailsDTO> GetAllBookDetailsByCategoryId(int categoryId);
 
         BookLongDetailsDTO GetAllBookDetailsByBookId(int Id);
+
+        List<BookShortDetailsDTO> GetLastAddedRecordDetails();
     }
 }

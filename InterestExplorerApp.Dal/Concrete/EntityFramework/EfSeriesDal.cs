@@ -49,5 +49,40 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
                           }).SingleOrDefault();
             return result;
         }
+
+        public List<SeriesShortDetailsDTO> GetHighestImdbScore()
+        {
+            var result = (from s in _context.Series
+                          join c in _context.Categories
+                          on s.CategoryId equals c.Id
+                          orderby s.IMDBScore descending
+                          select new SeriesShortDetailsDTO
+                          {
+                              Id = s.Id,
+                              SeriesName = s.SeriesName,
+                              CategoryName = c.CategoryName,
+                              ImageURL = s.ImageURL,
+                              IMDBScore = s.IMDBScore
+                          }).Take(12);
+            return result.ToList();
+        }
+
+        public List<SeriesShortDetailsDTO> GetLastAddedRecordDetails()
+        {
+            var result = (from s in _context.Series
+                          join c in _context.Categories
+                          on s.CategoryId equals c.Id
+                          orderby s.CreatedDate descending
+                          select new SeriesShortDetailsDTO
+                          {
+                              Id = s.Id,
+                              SeriesName = s.SeriesName,
+                              CategoryName = c.CategoryName,
+                              ImageURL = s.ImageURL,
+                              IMDBScore = s.IMDBScore
+                          }).Take(6);
+
+            return result.ToList();
+        }
     }
 }

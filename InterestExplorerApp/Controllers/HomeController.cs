@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using InterestExplorerApp.Bll.Abstract;
+using InterestExplorerApp.Entities.DTOs;
+
 namespace InterestExplorerApp.Controllers
 {
     public class HomeController : Controller
@@ -12,25 +14,40 @@ namespace InterestExplorerApp.Controllers
         private IMainCategoryService _mainCategoryService;
         private IMovieService _movieService;
         private ICategoryService _categoryService;
+        private IBookService _bookService;
+        private ISeriesService _seriesService;
+        private IVideoGameService _videoGameService;
 
-        public HomeController(IMainCategoryService mainCategoryService,IMovieService movieService,ICategoryService categoryService)
+        public HomeController(IMainCategoryService mainCategoryService,IMovieService movieService,ICategoryService categoryService,ISeriesService seriesService,IVideoGameService videoGameService,IBookService bookService)
         {
             _mainCategoryService = mainCategoryService;
             _movieService = movieService;
             _categoryService = categoryService;
+            _seriesService = seriesService;
+            _videoGameService = videoGameService;
+            _bookService = bookService;
         }
         public ActionResult Index()
         {
+            TempData["LastAddedMovie"] = _movieService.GetLastAddedRecordDetails();
+            TempData["LastAddedSeries"] = _seriesService.GetLastAddedRecordDetails();
+            TempData["LastAddedVideoGame"] = _videoGameService.GetLastAddedRecordDetails();
+            TempData["LastAddedBook"] = _bookService.GetLastAddedRecordDetails();
+
+            TempData["HighestImdbScoreMovie"] = _movieService.GetHighestImdbScore();
+            TempData["HighestImdbScoreSeries"] = _seriesService.GetHighestImdbScore();
+            TempData["HighestImdbScoreVideoGame"] = _videoGameService.GetHighestImdbScore();
+
             return View();
         }
         [ChildActionOnly]
-        public ActionResult Menu()
+        public PartialViewResult Menu()
         {
             var menu = _mainCategoryService.GetAll();
             return PartialView(menu);
         }
         [ChildActionOnly]
-        public ActionResult Footer()
+        public PartialViewResult Footer()
         {
             var menu = _mainCategoryService.GetAll();
             return PartialView(menu);

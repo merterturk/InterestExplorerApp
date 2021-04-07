@@ -46,5 +46,22 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
                          };
             return result.ToList();
         }
+
+        public List<BookShortDetailsDTO> GetLastAddedRecordDetails()
+        {
+            var result = (from b in _context.Books
+                          join c in _context.Categories
+                          on b.CategoryId equals c.Id
+                          orderby b.CreatedDate descending
+                          select new BookShortDetailsDTO
+                          {
+                              Id = b.Id,
+                              BookName = b.BookName,
+                              CategoryName = c.CategoryName,
+                              ImageURL = b.ImageURL,
+                          }).Take(6);
+
+            return result.ToList();
+        }
     }
 }

@@ -10,14 +10,14 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
 {
     public class EfMovieDal : IMovieDal
     {
-        private  InterestExplorerContext _context = new InterestExplorerContext();
+        private InterestExplorerContext _context = new InterestExplorerContext();
 
         public List<MovieShortDetailsDTO> GetAllMovieDetailsByCategoryId(int categoryId)
         {
             var result = from m in _context.Movies
                          join c in _context.Categories
                          on m.CategoryId equals c.Id
-                         where m.CategoryId==categoryId
+                         where m.CategoryId == categoryId
                          select new MovieShortDetailsDTO
                          {
                              Id = m.Id,
@@ -27,7 +27,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
                              IMDBScore = m.IMDBScore
                          };
             return result.ToList();
-            
+
         }
 
         public MovieLongDetailsDTO GetMovieDetailsByMovieId(int Id)
@@ -64,6 +64,23 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
                               ImageURL = m.ImageURL,
                               IMDBScore = m.IMDBScore
                           }).Take(6);
+            return result.ToList();
+        }
+
+        public List<MovieShortDetailsDTO> GetHighestImdbScore()
+        {
+            var result = (from m in _context.Movies
+                          join c in _context.Categories
+                          on m.CategoryId equals c.Id
+                          orderby m.IMDBScore descending
+                          select new MovieShortDetailsDTO
+                          {
+                              Id = m.Id,
+                              MovieName = m.MovieName,
+                              CategoryName = c.CategoryName,
+                              ImageURL = m.ImageURL,
+                              IMDBScore = m.IMDBScore
+                          }).Take(12);
             return result.ToList();
         }
     }

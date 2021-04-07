@@ -16,7 +16,7 @@ namespace InterestExplorerApp.WebAPI.Controllers
         {
             _movieService = movieService;
         }
-
+        // /api/movies/GetLastAddedMovieDetails
         [HttpGet]
         public IEnumerable<MovieShortDetailsDTO> GetLastAddedMovieDetails() // returned six Movie
         {
@@ -32,5 +32,6 @@ namespace InterestExplorerApp.WebAPI.Controllers
         {
             return _movieService.GetAllMovieDetailsByCategoryId(categoryId);
         }
+
     }
 }

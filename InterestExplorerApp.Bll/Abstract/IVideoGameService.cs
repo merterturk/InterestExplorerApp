@@ -12,5 +12,9 @@ namespace InterestExplorerApp.Bll.Abstract
         List<VideoGameShortDetailsDTO> GetAllVideoGameDetailsByCategoryId(int categoryId);
 
         VideoGameLongDetailsDTO GetAllVideoGameDetailsByVideoGameId(int Id);
+
+        List<VideoGameShortDetailsDTO> GetLastAddedRecordDetails();
+
+        List<VideoGameShortDetailsDTO> GetHighestImdbScore();
     }
 }
