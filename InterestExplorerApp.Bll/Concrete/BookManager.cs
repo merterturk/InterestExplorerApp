@@ -12,7 +12,7 @@ namespace InterestExplorerApp.Bll.Concrete
 {
     public class BookManager : IBookService
     {
-        private IBookDal _bookDal;
+        IBookDal _bookDal;
 
         public BookManager(IBookDal bookDal)
         {
@@ -37,6 +37,26 @@ namespace InterestExplorerApp.Bll.Concrete
         public List<BookShortDetailsDTO> GetLastAddedRecordDetails()
         {
             return _bookDal.GetLastAddedRecordDetails();
+        }
+
+        public List<BookShortDetailsDTO> GetMovieDetailsByFilter(short filter, int categoryId)
+        {
+            return _bookDal.GetMovieDetailsByFilter(filter, categoryId);
+        }
+
+        public List<BookShortDetailsDTO> GetRandomBookDetailsByCategoryId(int categoryId)
+        {
+            return _bookDal.GetRandomBookDetailsByCategoryId(categoryId);
+        }
+
+        public int GetTotalBookCount()
+        {
+            return _bookDal.GetTotalBookCount();
+        }
+
+        public string GetLastAddedBookName()
+        {
+            return _bookDal.GetLastAddedBookName();
         }
     }
     

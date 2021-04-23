@@ -19,13 +19,30 @@ namespace InterestExplorerApp.WebUI.Controllers
             _categoryService = categoryService;
         }
 
-        public ActionResult BookList(int? categoryId,int? page)
+        public ActionResult BookList(int? categoryId,int? page,short? filter)
         {
-            if (categoryId.HasValue)
+            if (!categoryId.HasValue)
             {
-                TempData["BookCategory"] = _categoryService.GetCategoryNameByCategoryId(categoryId.Value);
+                return RedirectToAction("PageNotFound", "Error");
+            }
+            List<SelectListItem> selectlist = new List<SelectListItem>
+            {
+                       new SelectListItem{Text="A-Z Film ismine göre sırala",Value="15030"},
+                       new SelectListItem{Text="Z-A Film ismine göre sırala",Value="15040"},
+                       new SelectListItem{Text="Yayın yılına göre en son çıkandan ilk çıkana göre sırala",Value="15050"},
+                       new SelectListItem{Text="Yayın yılına göre ilk çıkandan en son çıkana göre sırala",Value="15060"}
+            };
+            ViewBag.Data = selectlist;
+            TempData["BookCategory"] = _categoryService.GetCategoryNameByCategoryId(categoryId.Value);
+            if (categoryId.HasValue && !filter.HasValue)
+            {
                 var result = _bookService.GetAllBookDetailsByCategoryId(categoryId.Value);
                 return View(result.ToPagedList(page ?? 1,12));
+            }
+            if(categoryId.HasValue && filter.HasValue)
+            {
+                var result = _bookService.GetMovieDetailsByFilter(filter.Value, categoryId.Value);
+                return View(result.ToPagedList(page ?? 1, 12));
             }
 
             return RedirectToAction("PageNotFound", "Error");
@@ -34,7 +51,9 @@ namespace InterestExplorerApp.WebUI.Controllers
         {
             if (Id.HasValue)
             {
-                return View(_bookService.GetAllBookDetailsByBookId(Id.Value));
+                var result = _bookService.GetAllBookDetailsByBookId(Id.Value);
+                TempData["GetRandomBook"] = _bookService.GetRandomBookDetailsByCategoryId(result.CategoryId);
+                return View(result);
             }
             return RedirectToAction("PageNotFound", "Error");
         }

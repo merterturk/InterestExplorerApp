@@ -18,12 +18,32 @@ namespace InterestExplorerApp.WebUI.Controllers
             _videoGameService = videoGameService;
             _categoryService = categoryService;
         }
-        public ActionResult VideoGameList(int? categoryId,int? page)
+        public ActionResult VideoGameList(int? categoryId,int? page,short? filter)
         {
-            if (categoryId.HasValue)
+            if (!categoryId.HasValue)
             {
-                TempData["VideoGameCategory"] = _categoryService.GetCategoryNameByCategoryId(categoryId.Value);
+                return RedirectToAction("PageNotFound", "Error");
+            }
+            List<SelectListItem> selectlist = new List<SelectListItem>
+            {
+                       new SelectListItem{Text="A-Z Film ismine göre sırala",Value="15030"},
+                       new SelectListItem{Text="Z-A Film ismine göre sırala",Value="15040"},
+                       new SelectListItem{Text="IMDB puanına göre yüksekten düşüğe sırala",Value="15050"},
+                       new SelectListItem{Text="IMDB puanına göre düşükten yükseğe sırala",Value="15060"},
+                       new SelectListItem{Text="Yayın yılına göre en son çıkandan ilk çıkana göre sırala",Value="15070"},
+                       new SelectListItem{Text="Yayın yılına göre ilk çıkandan en son çıkana göre sırala",Value="15080"}
+            };
+            ViewBag.Data = selectlist;
+            TempData["VideoGameCategory"] = _categoryService.GetCategoryNameByCategoryId(categoryId.Value);
+            TempData["HighestImdbForVideoGame"] = _videoGameService.GetHighestImdbScoreByCategoryId(categoryId.Value);
+            if (categoryId.HasValue && !filter.HasValue)
+            {
                 var result = _videoGameService.GetAllVideoGameDetailsByCategoryId(categoryId.Value);
+                return View(result.ToPagedList(page ?? 1, 12));
+            }
+            if (categoryId.HasValue && filter.HasValue)
+            {
+                var result = _videoGameService.GetVideoGameDetailsByFilter(filter.Value, categoryId.Value);
                 return View(result.ToPagedList(page ?? 1, 12));
             }
             return RedirectToAction("PageNotFound", "Error");
@@ -32,7 +52,9 @@ namespace InterestExplorerApp.WebUI.Controllers
         {
             if (Id.HasValue)
             {
-                return View(_videoGameService.GetAllVideoGameDetailsByVideoGameId(Id.Value));
+                var result = _videoGameService.GetAllVideoGameDetailsByVideoGameId(Id.Value);
+                TempData["GetRandomVideoGame"] = _videoGameService.GetRandomVideoGameDetailsByCategoryId(result.CategoryId);
+                return View(result);
             }
             return RedirectToAction("PageNotFound", "Error");
         }

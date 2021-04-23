@@ -3,19 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InterestExplorerApp.Entities.Concrete;
 using InterestExplorerApp.Entities.DTOs;
 namespace InterestExplorerApp.Bll.Abstract
 {
     public interface IMovieService
     {
-       
+        Movie GetById(int Id);
+
+        List<Movie> GetAll();
+
+        void Update(Movie movie);
+
+        void Add(Movie movie);
+
+        void Delete(int Id);
+
         List<MovieShortDetailsDTO> GetAllMovieDetailsByCategoryId(int categoryId);
 
         MovieLongDetailsDTO GetMovieDetailsByMovieId(int Id);
 
         List<MovieShortDetailsDTO> GetLastAddedRecordDetails();
 
-        // Get Highest Imdb Score for 12 movie 
         List<MovieShortDetailsDTO> GetHighestImdbScore();
+
+        List<MovieShortDetailsDTO> GetHighestImdbScoreByCategoryId(int categoryId);
+
+        List<MovieShortDetailsDTO> GetMovieDetailsByFilter(short filter,int categoryId);
+
+        List<MovieShortDetailsDTO> GetRandomMovieDetailsByCategoryId(int categoryId);
+
+        List<Movie> SearchByMovieName(string search);
+
+        int GetTotalMovieCount();
+
+        string GetLastAddedMovieName();
+
+
     }
 }

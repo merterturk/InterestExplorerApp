@@ -12,7 +12,7 @@ namespace InterestExplorerApp.Bll.Concrete
 {
     public class VideoGameManager : IVideoGameService
     {
-        private IVideoGameDal _videoGameDal;
+        IVideoGameDal _videoGameDal;
 
         public VideoGameManager(IVideoGameDal videoGameDal)
         {
@@ -34,9 +34,34 @@ namespace InterestExplorerApp.Bll.Concrete
             return _videoGameDal.GetHighestImdbScore();
         }
 
+        public List<VideoGameShortDetailsDTO> GetHighestImdbScoreByCategoryId(int categoryId)
+        {
+            return _videoGameDal.GetHighestImdbScoreByCategoryId(categoryId);
+        }
+
         public List<VideoGameShortDetailsDTO> GetLastAddedRecordDetails()
         {
             return _videoGameDal.GetLastAddedRecordDetails();
+        }
+
+        public string GetLastAddedVideoGameName()
+        {
+            return _videoGameDal.GetLastAddedVideoGameName();
+        }
+
+        public List<VideoGameShortDetailsDTO> GetRandomVideoGameDetailsByCategoryId(int categoryId)
+        {
+            return _videoGameDal.GetRandomVideoGameDetailsByCategoryId(categoryId);
+        }
+
+        public int GetTotalVideoGameCount()
+        {
+            return _videoGameDal.GetTotalVideoGameCount();
+        }
+
+        public List<VideoGameShortDetailsDTO> GetVideoGameDetailsByFilter(short filter, int categoryId)
+        {
+            return _videoGameDal.GetVideoGameDetailsByFilter(filter, categoryId);
         }
     }
 }

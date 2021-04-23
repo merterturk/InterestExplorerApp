@@ -25,7 +25,7 @@ namespace InterestExplorerApp.Entities.Concrete
 
         [Display(Name = "IMDB puanı")]
         [Required(ErrorMessage = "IMDB puanını giriniz.")]
-        public string IMDBScore { get; set; }
+        public decimal IMDBScore { get; set; }
 
         [Display(Name = "Resim Yolu")]
         [Required(ErrorMessage = "Resim yolunu giriniz.")]

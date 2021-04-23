@@ -52,6 +52,8 @@
     <Compile Include="DTOs\AdvancedSearchDTO.cs" />
     <Compile Include="DTOs\BookLongDetailsDTO.cs" />
     <Compile Include="DTOs\BookShortDetailsDTO.cs" />
+    <Compile Include="DTOs\CategoryDTO.cs" />
+    <Compile Include="DTOs\MainCategoryDTO.cs" />
     <Compile Include="DTOs\MovieLongDetailsDTO.cs" />
     <Compile Include="DTOs\MovieShortDetailsDTO.cs" />
     <Compile Include="DTOs\SeriesLongDetailsDTO.cs" />

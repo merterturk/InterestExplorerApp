@@ -68,6 +68,22 @@
     <Compile Include="Migrations\202103302008210_DatabaseCreated.designer.cs">
       <DependentUpon>202103302008210_DatabaseCreated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104091700349_MovieTableUpdated.cs" />
+    <Compile Include="Migrations\202104091700349_MovieTableUpdated.designer.cs">
+      <DependentUpon>202104091700349_MovieTableUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104091718016_UpdateIMDBScore.cs" />
+    <Compile Include="Migrations\202104091718016_UpdateIMDBScore.designer.cs">
+      <DependentUpon>202104091718016_UpdateIMDBScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104091731292_MovieColumnUpdated.cs" />
+    <Compile Include="Migrations\202104091731292_MovieColumnUpdated.designer.cs">
+      <DependentUpon>202104091731292_MovieColumnUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104101424433_UpdatedTableColumns.cs" />
+    <Compile Include="Migrations\202104101424433_UpdatedTableColumns.designer.cs">
+      <DependentUpon>202104101424433_UpdatedTableColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +102,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202103302008210_DatabaseCreated.resx">
       <DependentUpon>202103302008210_DatabaseCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104091700349_MovieTableUpdated.resx">
+      <DependentUpon>202104091700349_MovieTableUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104091718016_UpdateIMDBScore.resx">
+      <DependentUpon>202104091718016_UpdateIMDBScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104091731292_MovieColumnUpdated.resx">
+      <DependentUpon>202104091731292_MovieColumnUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101424433_UpdatedTableColumns.resx">
+      <DependentUpon>202104101424433_UpdatedTableColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

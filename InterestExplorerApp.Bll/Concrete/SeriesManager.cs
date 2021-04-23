@@ -12,7 +12,7 @@ namespace InterestExplorerApp.Bll.Concrete
 {
     public class SeriesManager : ISeriesService
     {
-       private ISeriesDal _seriesDal;
+        ISeriesDal _seriesDal;
 
         public SeriesManager(ISeriesDal seriesDal)
         {
@@ -34,9 +34,34 @@ namespace InterestExplorerApp.Bll.Concrete
             return _seriesDal.GetHighestImdbScore();
         }
 
+        public List<SeriesShortDetailsDTO> GetHighestImdbScoreByCategoryId(int categoryId)
+        {
+            return _seriesDal.GetHighestImdbScoreByCategoryId(categoryId);
+        }
+
         public List<SeriesShortDetailsDTO> GetLastAddedRecordDetails()
         {
             return _seriesDal.GetLastAddedRecordDetails();
+        }
+
+        public string GetLastAddedSeriesName()
+        {
+            return _seriesDal.GetLastAddedSeriesName(); 
+        }
+
+        public List<SeriesShortDetailsDTO> GetRandomSeriesDetailsByCategoryId(int categoryId)
+        {
+            return _seriesDal.GetRandomSeriesDetailsByCategoryId(categoryId);
+        }
+
+        public List<SeriesShortDetailsDTO> GetSeriesDetailsByFilter(short filter, int categoryId)
+        {
+            return _seriesDal.GetSeriesDetailsByFilter(filter, categoryId);
+        }
+
+        public int GetTotalSeriesCount()
+        {
+            return _seriesDal.GetTotalSeriesCount(); 
         }
     }
 }

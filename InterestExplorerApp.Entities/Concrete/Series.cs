@@ -40,7 +40,7 @@ namespace InterestExplorerApp.Entities.Concrete
 
         [Display(Name = "IMDB puanı")]
         [Required(ErrorMessage = "IMDB puanını giriniz.")]
-        public string IMDBScore { get; set; }
+        public decimal IMDBScore { get; set; }
 
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }

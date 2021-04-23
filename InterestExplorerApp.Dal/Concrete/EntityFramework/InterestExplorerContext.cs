@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace InterestExplorerApp.Dal.Concrete.EntityFramework
 {
-   public class InterestExplorerContext : DbContext
+    //LOCAL MSSQL : Server=LAPTOP-9IQ5NO3T\\SQLEXPRESS;Initial Catalog=InterestExplorerDb;Integrated Security=True;
+    // Hosting MSSQL : workstation id=InterestExplorerDb.mssql.somee.com;packet size=4096;user id=Merterturk_SQLLogin_1;pwd=qsuq8v5hpp;data source=InterestExplorerDb.mssql.somee.com;persist security info=False;initial catalog=InterestExplorerDb
+    public class InterestExplorerContext : DbContext
     {
         public InterestExplorerContext():base("Server=LAPTOP-9IQ5NO3T\\SQLEXPRESS;Initial Catalog=InterestExplorerDb;Integrated Security=True;")
         {
+            this.Configuration.LazyLoadingEnabled = false;
 
         }
         public DbSet<Book> Books  { get; set; }

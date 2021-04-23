@@ -1,0 +1,6 @@
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Entities\bin\Release\InterestExplorerApp.Entities.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Entities\bin\Release\InterestExplorerApp.Entities.pdb
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Entities\obj\Release\InterestExplorerApp.Entities.csprojAssemblyReference.cache
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Entities\obj\Release\InterestExplorerApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Entities\obj\Release\InterestExplorerApp.Entities.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Entities\obj\Release\InterestExplorerApp.Entities.pdb

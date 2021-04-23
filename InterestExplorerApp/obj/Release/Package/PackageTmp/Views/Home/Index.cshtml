@@ -1,0 +1,314 @@
+﻿@using InterestExplorerApp.Entities.DTOs;
+@{
+    IEnumerable<MovieShortDetailsDTO> lastAddedMovie = TempData["LastAddedMovie"] as IEnumerable<MovieShortDetailsDTO>;
+    IEnumerable<SeriesShortDetailsDTO> lastAddedSeries = TempData["LastAddedSeries"] as IEnumerable<SeriesShortDetailsDTO>;
+    IEnumerable<VideoGameShortDetailsDTO> lastAddedVideoGame = TempData["LastAddedVideoGame"] as IEnumerable<VideoGameShortDetailsDTO>;
+    IEnumerable<BookShortDetailsDTO> lastAddedBook = TempData["LastAddedBook"] as IEnumerable<BookShortDetailsDTO>;
+
+    IEnumerable<MovieShortDetailsDTO> highestImdbScoreMovie = TempData["HighestImdbScoreMovie"] as IEnumerable<MovieShortDetailsDTO>;
+    IEnumerable<SeriesShortDetailsDTO> highestImdbScoreSeries = TempData["HighestImdbScoreSeries"] as IEnumerable<SeriesShortDetailsDTO>;
+    IEnumerable<VideoGameShortDetailsDTO> highestImdbScoreVideoGame = TempData["HighestImdbScoreVideoGame"] as IEnumerable<VideoGameShortDetailsDTO>;
+}
+
+<section class="home">
+    <!-- home bg -->
+    <div class="owl-carousel home__bg">
+        <div class="item home__cover" data-bg="~/Content/img/home/home__bg.jpg"></div>
+        <div class="item home__cover" data-bg="~/Content/img/home/home__bg2.jpg"></div>
+        <div class="item home__cover" data-bg="~/Content/img/home/home__bg3.jpg"></div>
+        <div class="item home__cover" data-bg="~/Content/img/home/home__bg4.jpg"></div>
+        <div class="item home__cover" data-bg="~/Content/img/home/home__bg4.jpg"></div>
+    </div>
+    <!-- end home bg -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="home__title"><b>SON EKLENEN</b> FİLMLER</h1>
+                <button class="home__nav home__nav--prev" type="button">
+                    <i class="icon ion-ios-arrow-round-back"></i>
+                </button>
+                <button class="home__nav home__nav--next" type="button">
+                    <i class="icon ion-ios-arrow-round-forward"></i>
+                </button>
+
+            </div>
+            <div class="col-12">
+                <div class="owl-carousel home__carousel">
+                    @foreach (var movie in lastAddedMovie)
+                    {
+                        <div class="item">
+                            <!-- card -->
+                            <div class="card card--big">
+                                <div class="card__cover">
+                                    <img src="@movie.ImageURL" alt="">
+                                    <a href="/Movie/MovieDetail/@movie.Id" class="card__play">
+                                        <i class="icon ion-ios-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title"><a>@movie.MovieName</a></h3>
+                                    <span class="card__category">
+                                        <a>@movie.CategoryName</a>
+                                    </span>
+                                    <span class="card__rate"><i class="icon ion-ios-star"></i>@movie.IMDBScore</span>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:100px;">
+            <div class="col-12">
+                <h1 class="home__title"><b>SON EKLENEN</b> DİZİLER</h1>
+                <button class="home__nav home__nav--prev" type="button">
+                    <i class="icon ion-ios-arrow-round-back"></i>
+                </button>
+                <button class="home__nav home__nav--next" type="button">
+                    <i class="icon ion-ios-arrow-round-forward"></i>
+                </button>
+
+            </div>
+            <div class="col-12">
+                <div class="owl-carousel home__carousel">
+                    @foreach (var series in lastAddedSeries)
+                    {
+                        <div class="item">
+                            <!-- card -->
+                            <div class="card card--big">
+                                <div class="card__cover">
+                                    <img src="@series.ImageURL" alt="">
+                                    <a href="/Series/SeriesDetail/@series.Id" class="card__play">
+                                        <i class="icon ion-ios-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">@series.SeriesName</h3>
+                                    <span class="card__category">
+                                        <a>@series.CategoryName</a>
+                                    </span>
+                                    <span class="card__rate"><i class="icon ion-ios-star"></i>@series.IMDBScore</span>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:100px;">
+            <div class="col-12">
+                <h1 class="home__title"><b>SON EKLENEN</b> VİDEO OYUNLARI</h1>
+                <button class="home__nav home__nav--prev" type="button">
+                    <i class="icon ion-ios-arrow-round-back"></i>
+                </button>
+                <button class="home__nav home__nav--next" type="button">
+                    <i class="icon ion-ios-arrow-round-forward"></i>
+                </button>
+
+            </div>
+            <div class="col-12">
+                <div class="owl-carousel home__carousel">
+                    @foreach (var videoGame in lastAddedVideoGame)
+                    {
+                        <div class="item">
+                            <!-- card -->
+                            <div class="card card--big">
+                                <div class="card__cover">
+                                    <img src="@videoGame.ImageURL" alt="">
+                                    <a href="/VideoGame/VideoGameDetail/@videoGame.Id" class="card__play">
+                                        <i class="icon ion-ios-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">@videoGame.VideoGameName</h3>
+                                    <span class="card__category">
+                                        <a>@videoGame.CategoryName</a>
+                                    </span>
+                                    <span class="card__rate"><i class="icon ion-ios-star"></i>@videoGame.IMDBScore</span>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:100px;">
+            <div class="col-12">
+                <h1 class="home__title"><b>SON EKLENEN</b> ROMANLAR</h1>
+                <button class="home__nav home__nav--prev" type="button">
+                    <i class="icon ion-ios-arrow-round-back"></i>
+                </button>
+                <button class="home__nav home__nav--next" type="button">
+                    <i class="icon ion-ios-arrow-round-forward"></i>
+                </button>
+
+            </div>
+            <div class="col-12">
+                <div class="owl-carousel home__carousel">
+                    @foreach (var book in lastAddedBook)
+                    {
+                        <div class="item">
+                            <!-- card -->
+                            <div class="card card--big">
+                                <div class="card__cover">
+                                    <img src="@book.ImageURL" alt="">
+                                    <a href="/Book/BookDetail/@book.Id" class="card__play">
+                                        <i class="icon ion-ios-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">@book.BookName</h3>
+                                    <span class="card__category">
+                                        <a>@book.CategoryName</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end home -->
+<!-- content -->
+<section class="content">
+    <div class="content__head">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- content title -->
+                    <h2 class="content__title">En İyiler</h2>
+                    <!-- end content title -->
+                    <!-- content tabs nav -->
+                    <ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Filmler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Diziler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Video Oyunları</a>
+                        </li>
+                    </ul>
+                    <!-- end content tabs nav -->
+                    <!-- content mobile tabs nav -->
+                    <div class="content__mobile-tabs" id="content__mobile-tabs">
+                        <div class="content__mobile-tabs-btn dropdown-toggle" role="navigation" id="mobile-tabs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <input type="button" value="Seçiniz">
+                            <span></span>
+                        </div>
+                        <div class="content__mobile-tabs-menu dropdown-menu" aria-labelledby="mobile-tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Filmler</a></li>
+                                <li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Diziler</a></li>
+                                <li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Video Oyunları</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end content mobile tabs nav -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- content tabs -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
+                <div class="row">
+                    <!-- card -->
+                    @foreach (var movie in highestImdbScoreMovie)
+                    {
+                        <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                            <div class="card">
+                                <div class="card__cover">
+                                    <img src="@movie.ImageURL" alt="">
+                                    <a href="/Movie/MovieDetail/@movie.Id" class="card__play">
+                                        <i class="icon ion-ios-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">@movie.MovieName</h3>
+                                    <span class="card__category">
+                                        <a>@movie.CategoryName</a>
+                                    </span>
+                                    <span class="card__rate"><i class="icon ion-ios-star"></i>@movie.IMDBScore</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
+                <div class="row">
+                    <!-- card -->
+                    @foreach (var series in highestImdbScoreSeries)
+                    {
+                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="@series.ImageURL" alt="">
+                                <a href="/Series/SeriesDetail/@series.Id" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">@series.SeriesName</h3>
+                                <span class="card__category">
+                                    <a>@series.CategoryName</a>
+                                </span>
+                                <span class="card__rate"><i class="icon ion-ios-star"></i>@series.IMDBScore</span>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    <!-- end card -->
+                   
+                    
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
+                <div class="row">
+                    <!-- card -->
+                    @foreach (var videoGame in highestImdbScoreVideoGame)
+                    {
+                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="@videoGame.ImageURL" alt="">
+                                <a href="/VideoGame/VideoGameDetail/@videoGame.Id" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">@videoGame.VideoGameName</h3>
+                                <span class="card__category">
+                                   <a>@videoGame.CategoryName</a>
+                                </span>
+                                <span class="card__rate"><i class="icon ion-ios-star"></i>@videoGame.IMDBScore</span>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    <!-- end card -->
+                   
+                </div>
+            </div>
+
+        </div>
+        <!-- end content tabs -->
+    </div>
+</section>
+<!-- end content -->
+<!-- expected premiere -->
+<!-- end expected premiere -->
+<!-- partners -->
+<!-- end partners -->

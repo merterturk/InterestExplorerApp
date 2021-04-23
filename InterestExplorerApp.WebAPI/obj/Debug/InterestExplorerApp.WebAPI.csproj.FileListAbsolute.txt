@@ -49,6 +49,8 @@ C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplo
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\Autofac.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\Autofac.Integration.WebApi.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\EntityFramework.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\EntityFramework.SqlServer.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\InterestExplorerApp.Bll.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\InterestExplorerApp.Dal.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\InterestExplorerApp.Entities.dll
@@ -64,13 +66,14 @@ C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplo
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\System.Web.Webpages.Deployment.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\System.Web.Webpages.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\System.Web.Webpages.Razor.dll
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\EntityFramework.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\InterestExplorerApp.Bll.pdb
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\InterestExplorerApp.Dal.pdb
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\InterestExplorerApp.Dal.dll.config
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\InterestExplorerApp.Entities.pdb
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\Autofac.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\Autofac.Integration.WebApi.xml
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\EntityFramework.xml
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\EntityFramework.SqlServer.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\System.Web.Razor.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\System.Web.Webpages.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\System.Web.Webpages.Deployment.xml
@@ -82,7 +85,6 @@ C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplo
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\System.Web.Http.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\System.Web.Http.WebHost.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\EntityFramework.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\tr\System.Web.Razor.resources.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\tr\System.Web.Webpages.resources.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\tr\System.Web.Webpages.Deployment.resources.dll
@@ -94,5 +96,3 @@ C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplo
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\obj\Debug\InterestExplorerApp.WebAPI.csproj.CopyComplete
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\obj\Debug\InterestExplorerApp.WebAPI.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\obj\Debug\InterestExplorerApp.WebAPI.pdb
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\EntityFramework.SqlServer.dll
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.WebAPI\bin\EntityFramework.SqlServer.xml

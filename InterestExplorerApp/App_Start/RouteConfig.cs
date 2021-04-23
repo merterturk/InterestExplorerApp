@@ -22,12 +22,11 @@ namespace InterestExplorerApp
                     action = "Index",
                     id = UrlParameter.Optional,
                 },
-                namespaces: new string[]
+        namespaces: new[]
                 {
-                    "InterestExplorerApp.Controllers"
+                    "InterestExplorerApp.WebUI.Controllers"
                 }
             );
-
         }
     }
 }

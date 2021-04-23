@@ -14,7 +14,7 @@ namespace InterestExplorerApp.Entities.DTOs
 
         public string CategoryName { get; set; }
 
-        public string IMDBScore { get; set; }
+        public decimal IMDBScore { get; set; }
 
         public string ImageURL { get; set; }
     }

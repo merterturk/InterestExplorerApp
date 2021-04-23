@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,12 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
     public class EfMainCategoryDal : IMainCategoryDal
     {
         private InterestExplorerContext _context = new InterestExplorerContext();
+
+        public void Add(MainCategory mainCategory)
+        {
+            _context.MainCategories.Add(mainCategory);
+            _context.SaveChanges();
+        }
 
         // Movie,Series,VideoGame, Book advanced searcing 
 
@@ -30,7 +37,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
                                    ImageURL = m.ImageURL,
                                    CategoryName = c.CategoryName,
                                    IMDBScore = m.IMDBScore
-                               }).ToList();
+                               }).AsNoTracking().ToList();
 
             result.SerieList = (from s in _context.Series
                                 join c in _context.Categories
@@ -43,7 +50,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
                                     ImageURL = s.ImageURL,
                                     CategoryName = c.CategoryName,
                                     IMDBScore = s.IMDBScore
-                                }).ToList();
+                                }).AsNoTracking().ToList();
 
             result.VideoGameList = (from v in _context.VideoGames
                                     join c in _context.Categories
@@ -56,7 +63,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
                                         ImageURL = v.ImageURL,
                                         CategoryName = c.CategoryName,
                                         IMDBScore = v.IMDBScore
-                                    }).ToList();
+                                    }).AsNoTracking().ToList();
 
             result.BookList = (from b in _context.Books
                                join c in _context.Categories
@@ -68,7 +75,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
                                    BookName = b.BookName,
                                    ImageURL = b.ImageURL,
                                    CategoryName = c.CategoryName
-                               }).ToList();
+                               }).AsNoTracking().ToList();
             return result;
         }
 
@@ -77,6 +84,9 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             return _context.MainCategories.Include("Categories").ToList();
         }
 
-
+        public int GetTotalMainCategoryCount()
+        {
+            return _context.MainCategories.Count();
+        }
     }
 }

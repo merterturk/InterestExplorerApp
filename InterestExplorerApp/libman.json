@@ -8,6 +8,21 @@
       "files": [
         "css/bootstrap.min.css"
       ]
+    },
+    {
+      "library": "jquery@3.6.0",
+      "destination": "Content/jquery/",
+      "files": [
+        "jquery.js"
+      ]
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "Content/css/toastr.js/"
+    },
+    {
+      "library": "limonte-sweetalert2@10.16.3",
+      "destination": "Content/css/limonte-sweetalert2/"
     }
   ]
 }

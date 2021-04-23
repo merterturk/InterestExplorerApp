@@ -7,16 +7,16 @@ using System.Web.Mvc;
 using InterestExplorerApp.Bll.Abstract;
 using InterestExplorerApp.Entities.DTOs;
 
-namespace InterestExplorerApp.Controllers
+namespace InterestExplorerApp.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        private IMainCategoryService _mainCategoryService;
-        private IMovieService _movieService;
-        private ICategoryService _categoryService;
-        private IBookService _bookService;
-        private ISeriesService _seriesService;
-        private IVideoGameService _videoGameService;
+        private readonly IMainCategoryService _mainCategoryService;
+        private readonly IMovieService _movieService;
+        private readonly ICategoryService _categoryService;
+        private readonly IBookService _bookService;
+        private readonly ISeriesService _seriesService;
+        private readonly IVideoGameService _videoGameService;
 
         public HomeController(IMainCategoryService mainCategoryService,IMovieService movieService,ICategoryService categoryService,ISeriesService seriesService,IVideoGameService videoGameService,IBookService bookService)
         {

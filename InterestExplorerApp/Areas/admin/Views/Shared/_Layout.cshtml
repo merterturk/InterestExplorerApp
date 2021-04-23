@@ -13,15 +13,12 @@
     <!-- Tempusdominus Bootstrap 4 -->
     <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <!-- iCheck -->
-    <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
-    <!-- JQVMap -->
-    <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/jqvmap/jqvmap.min.css" rel="stylesheet" />
+    <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" /> 
     <!-- Theme style -->
     <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/dist/css/adminlte.min.css" rel="stylesheet" />
     <!-- overlayScrollbars -->
     <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
     <!-- Daterange picker -->
-
     <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
     <!-- summernote -->
     <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/summernote/summernote-bs4.min.css" rel="stylesheet" />
@@ -65,7 +62,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-         with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                             <a href="@Url.Action("Index","Home",new {Area="admin"})" class="nav-link">
 
@@ -86,14 +83,14 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="@Url.Action("MovieList","Movie",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-list nav-icon"></i>
                                         <p>Film Listesi</p>
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="@Url.Action("AddMovie","Movie",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-plus-circle nav-icon"></i>
                                         <p>Film Ekle</p>
                                     </a>
@@ -151,7 +148,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book-open"></i>
                                 <p>
-                                    Kitaplar
+                                    Romanlar
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -159,13 +156,13 @@
                                 <li class="nav-item">
                                     <a href="pages/charts/flot.html" class="nav-link">
                                         <i class="fas fa-list nav-icon"></i>
-                                        <p>Kitap Listesi</p>
+                                        <p>Roman Listesi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="pages/charts/flot.html" class="nav-link">
                                         <i class="fas fa-plus-circle nav-icon"></i>
-                                        <p>Kitap Ekle</p>
+                                        <p>Roman Ekle</p>
                                     </a>
                                 </li>
 
@@ -203,13 +200,6 @@
         <!-- Content Wrapper. Contains page content -->
         @RenderBody()
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.1.0-rc
-            </div>
-        </footer>
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
@@ -218,7 +208,8 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery -->
-    <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/js/jquery-3.3.1.min.js"></script>
+
     <!-- jQuery UI 1.11.4 -->
     <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -233,12 +224,7 @@
     <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
     <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <!--Usa yapılacak unutma-->
-    <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/jqvmap/maps/jquery.vmap.turkey.js"></script>
     <!-- jQuery Knob Chart -->
-
     <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
     <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/plugins/moment/moment.min.js"></script>
@@ -254,6 +240,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="~/Areas/admin/AdminLTE-master/AdminLTE-master/dist/js/pages/dashboard.js"></script>
+     
 </body>
 </html>

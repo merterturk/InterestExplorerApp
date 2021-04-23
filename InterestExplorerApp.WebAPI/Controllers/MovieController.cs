@@ -32,6 +32,5 @@ namespace InterestExplorerApp.WebAPI.Controllers
         {
             return _movieService.GetAllMovieDetailsByCategoryId(categoryId);
         }
-
     }
 }

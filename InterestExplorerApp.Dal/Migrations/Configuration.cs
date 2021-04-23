@@ -9,6 +9,7 @@
     {
         public Configuration()
         {
+            
             AutomaticMigrationsEnabled = false;
         }
 

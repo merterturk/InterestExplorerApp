@@ -12,11 +12,16 @@ namespace InterestExplorerApp.Bll.Concrete
 {
     public class MainCategoryManager : IMainCategoryService
     {
-        private IMainCategoryDal _mainCategoryDal;
+        IMainCategoryDal _mainCategoryDal;
 
         public MainCategoryManager(IMainCategoryDal mainCategoryDal)
         {
             _mainCategoryDal = mainCategoryDal;
+        }
+
+        public void Add(MainCategory mainCategory)
+        {
+            _mainCategoryDal.Add(mainCategory);
         }
 
         public AdvancedSearchDTO AdvancedSearch(string search)
@@ -27,6 +32,11 @@ namespace InterestExplorerApp.Bll.Concrete
         public List<MainCategory> GetAll()
         {
             return _mainCategoryDal.GetAll();
+        }
+
+        public int GetTotalMainCategoryCount()
+        {
+            return _mainCategoryDal.GetTotalMainCategoryCount();
         }
     }
 }

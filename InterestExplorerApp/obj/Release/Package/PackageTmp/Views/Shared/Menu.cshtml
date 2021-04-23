@@ -1,0 +1,73 @@
+﻿@using InterestExplorerApp.Entities.Concrete
+@model IEnumerable<MainCategory>
+<header class="header">
+    <div class="header__wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header__content">
+                        <!-- header logo -->
+                        <a href="/Home/Index" class="header__nav-link">
+                            <h2 class="">INTEREST EXPLORER</h2>
+                        </a>
+                        <!-- end header logo -->
+                        <!-- header nav -->
+                        <ul class="header__nav">
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="/Home/Index">Anasayfa</a>
+                            </li>
+                            @foreach (var item in Model)
+                            {
+                                <li class="dropdown header__nav-item">
+                                    <a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@item.MainCategoryName</a>
+                                    @if (item.Categories.Count > 0)
+                                    {
+                                        <ul class="dropdown-menu header__dropdown-menu" style="min-width:225px;" aria-labelledby="dropdownMenuMore">
+                                            @foreach (var item2 in item.Categories)
+                                            {
+                                                <li><a href='@Url.Action("CategoryDetail","Home",new {maincategory=item.Id,category=item2.Id})'>@item2.CategoryName</a></li>
+                                            }
+                                        </ul>
+                                    }
+                                </li>
+                            }
+
+
+                            <!-- dropdown -->
+                            <!-- end dropdown -->
+                        </ul>
+                        <div class="header__auth">
+                            <button class="header__search-btn" type="button">
+                                <i class="icon ion-ios-search"></i>
+                            </button>
+                        </div>
+                        <!-- end header auth -->
+                        <!-- header menu btn -->
+                        <button class="header__btn" type="button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <!-- end header menu btn -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header search -->
+    <form action="/Home/Search" class="header__search">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header__search-content">
+                        <input type="text" name="search" placeholder="Aramak istediğiniz film,dizi,video oyunu,romanı yazınız..." required>
+                        <button type="submit">Ara</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- end header search -->
+</header>
+<!-- end header -->
+<!-- end header search -->

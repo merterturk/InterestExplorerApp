@@ -1,9 +1,5 @@
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\InterestExplorerApp.Bll.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\InterestExplorerApp.Bll.pdb
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.csprojAssemblyReference.cache
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.csproj.CoreCompileInputs.cache
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.dll
-C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.pdb
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\InterestExplorerApp.Dal.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\InterestExplorerApp.Entities.dll
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\Microsoft.Web.Infrastructure.dll
@@ -24,4 +20,8 @@ C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplo
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\bin\Debug\EntityFramework.xml
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.csprojAssemblyReference.cache
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.csproj.CoreCompileInputs.cache
 C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.csproj.CopyComplete
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.dll
+C:\Users\asus\Source\Repos\InterestExplorerApp\InterestExplorerApp\InterestExplorerApp.Bll\obj\Debug\InterestExplorerApp.Bll.pdb

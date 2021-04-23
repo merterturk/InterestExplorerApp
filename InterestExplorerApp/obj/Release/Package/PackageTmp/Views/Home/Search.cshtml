@@ -1,0 +1,124 @@
+﻿@using InterestExplorerApp.Entities.DTOs;
+@model AdvancedSearchDTO
+@{
+    ViewBag.Title = "Search";
+    var search = Request.QueryString["search"];
+}
+<section class="section section--first section--bg" data-bg="/Content/img/section/section.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section__wrap">
+                    <!-- section title -->
+                    <h5 class="section__title">Aradığınız Kelime : @search</h5>
+                    <!-- end section title -->
+                    <!-- breadcrumb -->
+                    <!-- end breadcrumb -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="catalog">
+    <div class="container">
+        <div class="row">
+            <!-- card -->
+            @if(search.Length < 5)
+            {
+            <div class="alert alert-danger mt-5 w-100" role="alert">
+                <strong>Aranacak Kelime en az 5 harfli olmalıdır.</strong>
+            </div>
+            }
+            else if (Model.BookList.Count == 0 && Model.MovieList.Count == 0 && Model.SerieList.Count == 0 && Model.VideoGameList.Count == 0)
+            {
+                <div class="alert alert-danger mt-5 w-100" role="alert">
+                    <strong>Sonuç Bulunamadı</strong>
+                </div>
+            }
+            else
+            {
+                foreach (var movie in Model.MovieList)
+                {
+                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                        <div class="card" style="margin-top:25px;">
+                            <div class="card__cover">
+                                <img src="@movie.ImageURL" alt="">
+                                <a href="/Movie/MovieDetail/@movie.Id" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title"><a>@movie.MovieName</a></h3>
+                                <span class="card__category">
+                                    <a>@movie.CategoryName</a>
+
+                                </span>
+                                <span class="card__rate"><i class="icon ion-ios-star"></i>@movie.IMDBScore</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                foreach (var series in Model.SerieList)
+                {
+                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2" style="margin-top:25px;">
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="@series.ImageURL" alt="">
+                                <a href="/Series/SeriesDetail/@series.Id" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">@series.SeriesName</h3>
+                                <span class="card__category">
+                                    <a>@series.CategoryName</a>
+                                </span>
+                                <span class="card__rate"><i class="icon ion-ios-star"></i>@series.IMDBScore</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                foreach (var videoGame in Model.VideoGameList)
+                {
+                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2" style="margin-top:25px;">
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="@videoGame.ImageURL" alt="">
+                                <a href="/VideoGame/VideoGameDetail/@videoGame.Id" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">@videoGame.VideoGameName</h3>
+                                <span class="card__category">
+                                    <a href="#">@videoGame.CategoryName</a>
+                                </span>
+                                <span class="card__rate"><i class="icon ion-ios-star"></i>@videoGame.IMDBScore</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                foreach (var book in Model.BookList)
+                {
+                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2" style="margin-top:25px;">
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="@book.ImageURL" alt="">
+                                <a href="/Book/BookDetail/@book.Id" class="card__play">
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">@book.BookName</h3>
+                                <span class="card__category">
+                                    <a>@book.CategoryName</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+            <!-- end card -->
+        </div>
+    </div>
+</div>
