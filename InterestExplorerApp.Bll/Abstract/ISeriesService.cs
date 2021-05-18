@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InterestExplorerApp.Entities.Concrete;
 using InterestExplorerApp.Entities.DTOs;
 namespace InterestExplorerApp.Bll.Abstract
 {
    public interface ISeriesService
     {
+        Series GetById(int Id);
+
+        List<Series> GetAll();
+
+        void Add(Series series);
+
+        void Update(Series series);
+
+        void Delete(int Id);
+
         List<SeriesShortDetailsDTO> GetAllSeriesDetailsByCategoryId(int categoryId);
 
         SeriesLongDetailsDTO GetAllSeriesDetailsBySeriesId(int Id);
@@ -21,6 +32,8 @@ namespace InterestExplorerApp.Bll.Abstract
         List<SeriesShortDetailsDTO> GetSeriesDetailsByFilter(short filter, int categoryId);
 
         List<SeriesShortDetailsDTO> GetRandomSeriesDetailsByCategoryId(int categoryId);
+
+        List<Series> SearchBySeriesName(string search);
 
         int GetTotalSeriesCount();
 

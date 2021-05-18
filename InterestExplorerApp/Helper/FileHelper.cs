@@ -12,14 +12,15 @@ namespace InterestExplorerApp.WebUI.Helper
         {
             if (file.ContentLength > 0)
             {
-                string dosyaadi = Path.GetFileName(file.FileName);
-                string dosyayolu = Path.GetExtension(file.FileName);
-                dosyaadi = Guid.NewGuid().ToString();
-                string yol = "~/Content/img/" + type + "/" + dosyaadi + dosyayolu;
-                file.SaveAs(HttpContext.Current.Server.MapPath(yol));
-                return $"/Content/img/{type}/{dosyaadi}{dosyayolu}";
+                string fileName = Path.GetFileName(file.FileName);
+                string fileExtension = Path.GetExtension(file.FileName);
+                fileName = Guid.NewGuid().ToString();
+                string path = "~/Content/img/" + type + "/" + fileName + fileExtension;
+                file.SaveAs(HttpContext.Current.Server.MapPath(path));
+                return $"/Content/img/{type}/{fileName}{fileExtension}";
             }
             return null;
         }
+     
     }
 }

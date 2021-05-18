@@ -1,0 +1,33 @@
+﻿@using InterestExplorerApp.Entities.Concrete
+@model Series
+@{
+    ViewBag.Title = "SeriesDetails";
+}
+<div class="content-wrapper">
+    <h2 class="text-center text-warning">Dizi Detay</h2>
+    <div style="margin-left:15px;">
+        <b>Id</b>: <span>@Model.Id</span>
+        <hr />
+        <b>Dizi Adı</b>: <span>@Model.SeriesName</span>
+        <hr />
+        <b>Dizi Açıklama</b>: <span>@Model.SeriesDescription</span>
+        <hr />
+        <b>Kategori</b>: <span>@Model.Category.CategoryName</span>
+        <hr />
+        <b>Yayın Yılı</b>: <span>@Model.Year</span>
+        <hr />
+        <b>Sezon Sayısı</b>: <span>@Model.TotalSeason</span>
+        <hr />
+        <b>Bölüm Sayısı</b>: <span>@Model.TotalEpisode</span>
+        <hr />
+        <b>Imdb Skoru</b>: <span>@Model.IMDBScore</span>
+        <hr />
+        <b>Resim</b>:
+        <img style="margin-left:55px;" src="@Url.Content(Model.ImageURL)" />
+        <hr />
+        <b>VideoURL</b>: <span>@Model.VideoURL</span>
+        <hr />
+        <b>Oluşturulma Tarihi</b>: <span>@Model.CreatedDate</span>
+        <hr />
+    </div>
+</div>

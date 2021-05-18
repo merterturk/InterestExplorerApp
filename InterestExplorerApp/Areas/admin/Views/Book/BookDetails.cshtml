@@ -1,0 +1,29 @@
+﻿@using InterestExplorerApp.Entities.Concrete
+@model Book
+@{
+    ViewBag.Title = "BookDetails";
+}
+<div class="content-wrapper">
+    <h2 class="text-center text-warning">Film Detay</h2>
+    <div style="margin-left:15px;">
+        <b>Id</b>: <span>@Model.Id</span>
+        <hr />
+        <b>Roman Adı</b>: <span>@Model.BookName</span>
+        <hr />
+        <b>Roman Açıklama</b>: <span>@Model.BookDescription</span>
+        <hr />
+        <b>Yazarı</b>: <span>@Model.AuthorName</span>
+        <hr />
+        <b>Sayfa Sayısı</b>: <span>@Model.PageNumber</span>
+        <hr />
+        <b>Kategori</b>: <span>@Model.Category.CategoryName</span>
+        <hr />
+        <b>Yayın Yılı</b>: <span>@Model.ReleaseYear</span>
+        <hr />
+        <b>Resim</b>:
+        <img style="margin-left:55px;" src="@Url.Content(Model.ImageURL)" />
+        <hr />
+        <b>Oluşturulma Tarihi</b>: <span>@Model.CreatedDate</span>
+        <hr />
+    </div>
+</div>

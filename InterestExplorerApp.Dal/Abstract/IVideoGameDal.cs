@@ -1,4 +1,5 @@
-﻿using InterestExplorerApp.Entities.DTOs;
+﻿using InterestExplorerApp.Entities.Concrete;
+using InterestExplorerApp.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,16 @@ namespace InterestExplorerApp.Dal.Abstract
 {
     public interface IVideoGameDal
     {
+        VideoGame GetById(int Id);
+
+        List<VideoGame> GetAll();
+
+        void Add(VideoGame videoGame);
+
+        void Update(VideoGame videoGame);
+
+        void Delete(int Id);
+
         List<VideoGameShortDetailsDTO> GetAllVideoGameDetailsByCategoryId(int categoryId);
 
         VideoGameLongDetailsDTO GetAllVideoGameDetailsByVideoGameId(int Id);
@@ -22,6 +33,8 @@ namespace InterestExplorerApp.Dal.Abstract
         List<VideoGameShortDetailsDTO> GetVideoGameDetailsByFilter(short filter, int categoryId);
 
         List<VideoGameShortDetailsDTO> GetRandomVideoGameDetailsByCategoryId(int categoryId);
+
+        List<VideoGame> SearchByVideoGameName(string search);
 
         int GetTotalVideoGameCount();
 

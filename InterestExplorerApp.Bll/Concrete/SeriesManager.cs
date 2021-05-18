@@ -19,6 +19,21 @@ namespace InterestExplorerApp.Bll.Concrete
             _seriesDal = seriesDal;
         }
 
+        public void Add(Series series)
+        {
+            _seriesDal.Add(series);
+        }
+
+        public void Delete(int Id)
+        {
+            _seriesDal.Delete(Id);
+        }
+
+        public List<Series> GetAll()
+        {
+            return _seriesDal.GetAll();
+        }
+
         public List<SeriesShortDetailsDTO> GetAllSeriesDetailsByCategoryId(int categoryId)
         {
             return _seriesDal.GetAllSeriesDetailsByCategoryId(categoryId);
@@ -27,6 +42,11 @@ namespace InterestExplorerApp.Bll.Concrete
         public SeriesLongDetailsDTO GetAllSeriesDetailsBySeriesId(int Id)
         {
             return _seriesDal.GetAllSeriesDetailsBySeriesId(Id);
+        }
+
+        public Series GetById(int Id)
+        {
+            return _seriesDal.GetById(Id);
         }
 
         public List<SeriesShortDetailsDTO> GetHighestImdbScore()
@@ -62,6 +82,16 @@ namespace InterestExplorerApp.Bll.Concrete
         public int GetTotalSeriesCount()
         {
             return _seriesDal.GetTotalSeriesCount(); 
+        }
+
+        public List<Series> SearchBySeriesName(string search)
+        {
+            return _seriesDal.SearchBySeriesName(search);
+        }
+
+        public void Update(Series series)
+        {
+             _seriesDal.Update(series);
         }
     }
 }

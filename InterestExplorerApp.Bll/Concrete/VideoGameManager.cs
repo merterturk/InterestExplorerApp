@@ -19,6 +19,21 @@ namespace InterestExplorerApp.Bll.Concrete
             _videoGameDal = videoGameDal;
         }
 
+        public void Add(VideoGame videoGame)
+        {
+            _videoGameDal.Add(videoGame);
+        }
+
+        public void Delete(int Id)
+        {
+            _videoGameDal.Delete(Id);
+        }
+
+        public List<VideoGame> GetAll()
+        {
+            return _videoGameDal.GetAll();
+        }
+
         public List<VideoGameShortDetailsDTO> GetAllVideoGameDetailsByCategoryId(int categoryId)
         {
            return  _videoGameDal.GetAllVideoGameDetailsByCategoryId(categoryId);
@@ -27,6 +42,11 @@ namespace InterestExplorerApp.Bll.Concrete
         public VideoGameLongDetailsDTO GetAllVideoGameDetailsByVideoGameId(int Id)
         {
             return _videoGameDal.GetAllVideoGameDetailsByVideoGameId(Id);
+        }
+
+        public VideoGame GetById(int Id)
+        {
+            return _videoGameDal.GetById(Id);
         }
 
         public List<VideoGameShortDetailsDTO> GetHighestImdbScore()
@@ -62,6 +82,16 @@ namespace InterestExplorerApp.Bll.Concrete
         public List<VideoGameShortDetailsDTO> GetVideoGameDetailsByFilter(short filter, int categoryId)
         {
             return _videoGameDal.GetVideoGameDetailsByFilter(filter, categoryId);
+        }
+
+        public List<VideoGame> SearchByVideoGameName(string search)
+        {
+            return _videoGameDal.SearchByVideoGameName(search);
+        }
+
+        public void Update(VideoGame videoGame)
+        {
+            _videoGameDal.Update(videoGame);
         }
     }
 }

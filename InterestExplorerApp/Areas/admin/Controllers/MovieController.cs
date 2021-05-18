@@ -13,12 +13,13 @@ using InterestExplorerApp.WebUI.Helper;
 
 namespace InterestExplorerApp.WebUI.Areas.admin.Controllers
 {
+    [Authorize]
     public class MovieController : Controller
     {
         IMovieService _movieService;
         ICategoryService _categoryService;
 
-        public MovieController(IMovieService movieService,ICategoryService categoryService)
+        public MovieController(IMovieService movieService, ICategoryService categoryService)
         {
             _categoryService = categoryService;
             _movieService = movieService;
@@ -40,7 +41,7 @@ namespace InterestExplorerApp.WebUI.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddMovie(MovieLongDetailsDTO movie)
         {
-            var allCategory = _categoryService.GetAllByMainCategoryId(1); 
+            var allCategory = _categoryService.GetAllByMainCategoryId(1);
             List<SelectListItem> category = (from i in allCategory
                                              select new SelectListItem
                                              {
@@ -51,43 +52,93 @@ namespace InterestExplorerApp.WebUI.Areas.admin.Controllers
 
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(movie);
             }
-                Movie addMovie = new Movie();
-                addMovie.MovieName = movie.MovieName;
-                addMovie.MovieDescription = movie.MovieDescription;
-                addMovie.CategoryId = movie.CategoryId;
-                addMovie.CreatedDate = DateTime.Now;
-                addMovie.ImageURL = FileHelper.Add(Request.Files[0], "Movie");
-                addMovie.IMDBScore = movie.IMDBScore;
-                addMovie.TotalTime = movie.TotalTime;
-                addMovie.VideoURL = movie.VideoURL;
-                addMovie.Year = movie.Year;
-                addMovie.IsActive = true;
-                _movieService.Add(addMovie);
-            TempData["Message"] = $"{movie.MovieName} Filmi başarıyla eklendi";
-            return RedirectToAction("MovieList","Movie");
+            Movie addMovie = new Movie();
+            addMovie.MovieName = movie.MovieName;
+            addMovie.MovieDescription = movie.MovieDescription;
+            addMovie.CategoryId = movie.CategoryId;
+            addMovie.ImageURL = FileHelper.Add(Request.Files[0], "Movie");
+            addMovie.IMDBScore = movie.IMDBScore;
+            addMovie.TotalTime = movie.TotalTime;
+            addMovie.VideoURL = movie.VideoURL;
+            addMovie.Year = movie.Year;
+            addMovie.IsActive = true;
+            addMovie.CreatedDate = DateTime.Now;
+            _movieService.Add(addMovie);
+            TempData["AddedMessage"] = $"{addMovie.MovieName} Filmi başarıyla eklendi";
+            return RedirectToAction("MovieList", "Movie");
         }
-        public ActionResult MovieList(int? page,string search)
+        public ActionResult MovieList(int? page, string search)
         {
             if (!string.IsNullOrEmpty(search))
             {
                 var searchingMovie = _movieService.SearchByMovieName(search);
-                return View(searchingMovie.ToPagedList(page ?? 1,10));
+                return View(searchingMovie.ToPagedList(page ?? 1, 10));
             }
             var result = _movieService.GetAll();
-            return View(result.ToPagedList(page ?? 1,10));
+            return View(result.ToPagedList(page ?? 1, 10));
         }
-        public ActionResult MovieUpdate(int Id)
+        public ActionResult UpdateMovie(int Id)
         {
-            return View();
+            var allCategory = _categoryService.GetAllByMainCategoryId(1); // 1 = Movie 2= Series 3= VideoGames 4=Book
+            List<SelectListItem> category = (from i in allCategory
+                                             select new SelectListItem
+                                             {
+                                                 Value = i.Id.ToString(),
+                                                 Text = i.Name
+                                             }).ToList();
+            ViewBag.Category = category;
+            var movie = _movieService.GetById(Id);
+            TempData["ImageURL"] = movie.ImageURL;
+            return View(movie);
         }
-        public ActionResult MovieDelete(int Id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateMovie(Movie movie)
         {
-            _movieService.Delete(Id);
-            TempData["Message2"] = "Kayıt silindi";
+            var allCategory = _categoryService.GetAllByMainCategoryId(1); // 1 = Movie 2= Series 3= VideoGames 4=Book
+            List<SelectListItem> category = (from i in allCategory
+                                             select new SelectListItem
+                                             {
+                                                 Value = i.Id.ToString(),
+                                                 Text = i.Name
+                                             }).ToList();
+            ViewBag.Category = category;
+
+            Movie updatedMovie = new Movie();
+            updatedMovie.MovieName = movie.MovieName;
+            updatedMovie.MovieDescription = movie.MovieDescription;
+            updatedMovie.CategoryId = movie.CategoryId;
+            updatedMovie.IMDBScore = movie.IMDBScore;
+            updatedMovie.TotalTime = movie.TotalTime;
+            updatedMovie.VideoURL = movie.VideoURL;
+            updatedMovie.Year = movie.Year;
+            updatedMovie.Id = movie.Id;
+            updatedMovie.CreatedDate = movie.CreatedDate;
+
+            if (Request.Files[0].ContentLength > 0)
+            {
+                updatedMovie.ImageURL = FileHelper.Add(Request.Files[0], "Movie");
+            }
+            else
+            {
+                updatedMovie.ImageURL = TempData["ImageURL"].ToString();
+            }
+            _movieService.Update(updatedMovie);
+            TempData["UpdatedMessage"] = "Kayıt Güncellendi";
             return RedirectToAction("MovieList");
         }
-       
+        public ActionResult DeleteMovie(int Id)
+        {
+            _movieService.Delete(Id);
+            TempData["DeletedMessage"] = "Kayıt silindi";
+            return RedirectToAction("MovieList");
+        }
+        public ActionResult MovieDetails(int Id)
+        {
+            return View(_movieService.GetById(Id));
+        }
+
     }
 }

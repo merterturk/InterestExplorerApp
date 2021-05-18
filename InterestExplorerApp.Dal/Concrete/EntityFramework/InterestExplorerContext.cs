@@ -28,5 +28,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
         public DbSet<Series> Series { get; set; }
 
         public DbSet<VideoGame> VideoGames { get; set; }
+
+        public DbSet<Admin> Admins { get; set; }
     }
 }

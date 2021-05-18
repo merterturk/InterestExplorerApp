@@ -4,11 +4,13 @@
 @model IPagedList<Movie>
 @{
     ViewBag.Title = "MovieList";
+    
 }
 <link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/dist/css/IPagedList.css" rel="stylesheet" />
 <link href="~/Content/css/toastr.js/toastr.min.css" rel="stylesheet" />
-<span id="Message" class="d-none">@TempData["Message"]</span>
-<span id="Message2" class="d-none">@TempData["Message2"]</span>
+<span id="Message" class="d-none">@TempData["AddedMessage"]</span>
+<span id="Message2" class="d-none">@TempData["DeletedMessage"]</span>
+<span id="Message3" class="d-none">@TempData["UpdatedMessage"]</span>
 <div class="content-wrapper" style="background-color:white;">
     @using (Html.BeginForm("MovieList", "Movie", FormMethod.Get, new { area = "admin" }))
     {
@@ -37,11 +39,9 @@
                     <th>Resim</th>
                     <th>VideoURL</th>
                     <th>Oluşturulma Tarihi</th>
-                    <th>Güncellenme Tarihi</th>
-                    <th>Silme Tarihi</th>
-                    <th>Aktif mi?</th>
                     <th>Güncelle</th>
                     <th>Sil</th>
+                    <th>Detay</th>
                 </tr>
             </thead>
 
@@ -49,23 +49,21 @@
 
                 @foreach (var movie in Model)
                 {
-                    <tr>
-                        <td>@movie.Id</td>
-                        <td>@movie.MovieName</td>
-                        <td>@movie.MovieDescription</td>
-                        <td>@movie.Category.CategoryName</td>
-                        <td>@movie.Year</td>
-                        <td>@movie.TotalTime</td>
-                        <td>@movie.IMDBScore</td>
-                        <td><img src="@Url.Content(@movie.ImageURL)" width="100" height="100"></td>
-                        <td>@movie.VideoURL</td>
-                        <td>@movie.CreatedDate</td>
-                        <td>@movie.UpdatedDate</td>
-                        <td>@movie.DeletedDate</td>
-                        <td>@movie.IsActive</td>
-                        <td><a class="btn btn-success" href="MovieUpdate/@movie.Id">Güncelle</a></td>
-                        <td><a class="btn btn-danger" href="MovieDelete/@movie.Id">Sil</a></td>
-                    </tr>
+                <tr>
+                    <td>@movie.Id</td>
+                    <td>@movie.MovieName</td>
+                    <td>@movie.MovieDescription.Substring(0,100) ...</td>
+                    <td>@movie.Category.CategoryName</td>
+                    <td>@movie.Year</td>
+                    <td>@movie.TotalTime</td>
+                    <td>@movie.IMDBScore</td>
+                    <td><img src="@Url.Content(@movie.ImageURL)" width="100" height="100"></td>
+                    <td>@movie.VideoURL</td>
+                    <td>@movie.CreatedDate</td>
+                    <td><a class="btn btn-success" href="UpdateMovie/@movie.Id">Güncelle</a></td>
+                    <td><a class="btn btn-danger" href="DeleteMovie/@movie.Id">Sil</a></td>
+                    <td><a class="btn btn-warning" href="MovieDetails/@movie.Id">Detay</a></td>
+                </tr>
                 }
             </tbody>
         </table>
@@ -89,6 +87,10 @@
         var message2 = $('#Message2').text();
         if (message2 != '') {
             toastr.success(message2);
+        }
+        var message3 = $('#Message3').text();
+        if (message3 != '') {
+            toastr.success(message3);
         }
     });
 </script>

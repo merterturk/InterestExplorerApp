@@ -41,6 +41,9 @@ namespace InterestExplorerApp
             builder.RegisterType<VideoGameManager>().As<IVideoGameService>();
             builder.RegisterType<EfVideoGameDal>().As<IVideoGameDal>();
 
+            builder.RegisterType<AdminManager>().As<IAdminService>();
+            builder.RegisterType<EfAdminDal>().As<IAdminDal>();
+
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             #endregion

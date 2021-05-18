@@ -15,7 +15,7 @@
             @Html.ValidationMessageFor(x => x.MovieName, "", new { @class = "text-danger" })
             <br />
             <label>Film Açıklama</label>
-            @Html.TextAreaFor(x => x.MovieDescription, new { @class = "form-control" })
+            @Html.TextAreaFor(x => x.MovieDescription, new { @class = "form-control", @style = "height:100px" })
             @Html.ValidationMessageFor(x => x.MovieDescription, "", new { @class = "text-danger" })
             <br />
             <label>Kategori</label>

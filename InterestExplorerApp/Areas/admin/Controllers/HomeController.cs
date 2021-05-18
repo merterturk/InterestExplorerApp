@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace InterestExplorerApp.WebUI.Areas.admin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         IMovieService _movieService;
@@ -43,10 +44,6 @@ namespace InterestExplorerApp.WebUI.Areas.admin.Controllers
             TempData["MainCategoryCount"] = _mainCategoryService.GetTotalMainCategoryCount();
             return View();
         }
-        public ActionResult Deneme()
-        {
-            return View();
-        }
-   
+     
     }
 }

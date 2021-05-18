@@ -1,0 +1,31 @@
+﻿@using InterestExplorerApp.Entities.Concrete
+@model Movie
+@{
+    ViewBag.Title = "MovieDetails";
+}
+<div class="content-wrapper">
+    <h2 class="text-center text-warning">Film Detay</h2>
+    <div style="margin-left:15px;">
+        <b>Id</b>: <span>@Model.Id</span>
+        <hr />
+        <b>Film Adı</b>: <span>@Model.MovieName</span>
+        <hr />
+        <b>Film Açıklama</b>: <span>@Model.MovieDescription</span>
+        <hr />
+        <b>Kategori</b>: <span>@Model.Category.CategoryName</span>
+        <hr />
+        <b>Yayın Yılı</b>: <span>@Model.Year</span>
+        <hr />
+        <b>Toplam Süre</b>: <span>@Model.TotalTime</span>
+        <hr />
+        <b>Imdb Skoru</b>: <span>@Model.IMDBScore</span>
+        <hr />
+        <b>Resim</b>:
+        <img style="margin-left:55px;" src="@Url.Content(Model.ImageURL)" />
+        <hr />
+        <b>VideoURL</b>: <span>@Model.VideoURL</span>
+        <hr />
+        <b>Oluşturulma Tarihi</b>: <span>@Model.CreatedDate</span>
+        <hr />
+    </div>
+</div>

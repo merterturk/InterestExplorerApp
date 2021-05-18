@@ -18,12 +18,7 @@ namespace InterestExplorerApp.Bll.Concrete
         {
             _mainCategoryDal = mainCategoryDal;
         }
-
-        public void Add(MainCategory mainCategory)
-        {
-            _mainCategoryDal.Add(mainCategory);
-        }
-
+      
         public AdvancedSearchDTO AdvancedSearch(string search)
         {
             return _mainCategoryDal.AdvancedSearch(search);

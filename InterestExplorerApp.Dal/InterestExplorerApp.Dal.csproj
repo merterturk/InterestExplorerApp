@@ -51,12 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\IBookDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IMainCategoryDal.cs" />
     <Compile Include="Abstract\IMovieDal.cs" />
     <Compile Include="Abstract\ISeriesDal.cs" />
     <Compile Include="Abstract\IVideoGameDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBookDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMovieDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSeriesDal.cs" />
@@ -64,25 +66,9 @@
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMainCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\InterestExplorerContext.cs" />
-    <Compile Include="Migrations\202103302008210_DatabaseCreated.cs" />
-    <Compile Include="Migrations\202103302008210_DatabaseCreated.designer.cs">
-      <DependentUpon>202103302008210_DatabaseCreated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104091700349_MovieTableUpdated.cs" />
-    <Compile Include="Migrations\202104091700349_MovieTableUpdated.designer.cs">
-      <DependentUpon>202104091700349_MovieTableUpdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104091718016_UpdateIMDBScore.cs" />
-    <Compile Include="Migrations\202104091718016_UpdateIMDBScore.designer.cs">
-      <DependentUpon>202104091718016_UpdateIMDBScore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104091731292_MovieColumnUpdated.cs" />
-    <Compile Include="Migrations\202104091731292_MovieColumnUpdated.designer.cs">
-      <DependentUpon>202104091731292_MovieColumnUpdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104101424433_UpdatedTableColumns.cs" />
-    <Compile Include="Migrations\202104101424433_UpdatedTableColumns.designer.cs">
-      <DependentUpon>202104101424433_UpdatedTableColumns.cs</DependentUpon>
+    <Compile Include="Migrations\202105141808572_DatabaseCreated.cs" />
+    <Compile Include="Migrations\202105141808572_DatabaseCreated.designer.cs">
+      <DependentUpon>202105141808572_DatabaseCreated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,20 +86,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103302008210_DatabaseCreated.resx">
-      <DependentUpon>202103302008210_DatabaseCreated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104091700349_MovieTableUpdated.resx">
-      <DependentUpon>202104091700349_MovieTableUpdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104091718016_UpdateIMDBScore.resx">
-      <DependentUpon>202104091718016_UpdateIMDBScore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104091731292_MovieColumnUpdated.resx">
-      <DependentUpon>202104091731292_MovieColumnUpdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104101424433_UpdatedTableColumns.resx">
-      <DependentUpon>202104101424433_UpdatedTableColumns.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105141808572_DatabaseCreated.resx">
+      <DependentUpon>202105141808572_DatabaseCreated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

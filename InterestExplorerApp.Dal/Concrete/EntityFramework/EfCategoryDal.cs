@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,22 +21,26 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             _context.SaveChanges();
         }
 
-        public void Delete(int categoryId)
+        public void Delete(int Id)
         {
-            var deletedCategory = _context.Categories.SingleOrDefault(x => x.Id == categoryId);
-            _context.Categories.Remove(deletedCategory);
-            _context.SaveChanges();
+            var category = _context.Categories.SingleOrDefault(x => x.Id == Id);
+            if (category != null)
+            {
+                category.IsActive = false;
+                category.DeletedDate = DateTime.Now;
+                _context.SaveChanges();
+            }
         }
 
         public List<Category> GetAll()
         {
-            return _context.Categories.Include("MainCategory").ToList();
+            return _context.Categories.Include("MainCategory").Where(x=>x.IsActive==true).ToList();
         }
 
         public List<CategoryDTO> GetAllByMainCategoryId(int mainCategoryId)
         {
             var result = from c in _context.Categories
-                         where c.MainCategoryId == mainCategoryId
+                         where c.MainCategoryId == mainCategoryId && c.IsActive==true
                          select new CategoryDTO
                          {
                              Id = c.Id,
@@ -43,9 +49,9 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             return result.ToList();
         }
 
-        public Category GetById(int categoryId)
+        public Category GetById(int Id)
         {
-            return _context.Categories.SingleOrDefault(x => x.Id == categoryId);
+            return _context.Categories.SingleOrDefault(x => x.Id == Id);
         }
 
         public string GetCategoryNameByCategoryId(int categoryId)
@@ -55,12 +61,21 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
 
         public int GetTotalCategoryCount()
         {
-            return _context.Categories.Count();
+            return _context.Categories.Where(x=>x.IsActive==true).Count();
+        }
+
+        public List<Category> SearchByCategoryName(string search)
+        {
+            return _context.Categories.Include("MainCategory").Where(x => x.CategoryName.Contains(search) && x.IsActive == true).AsNoTracking().ToList();
         }
 
         public void Update(Category category)
         {
+            _context.Categories.AddOrUpdate(category);
+            _context.SaveChanges();
 
         }
+
+        
     }
 }

@@ -14,8 +14,6 @@ namespace InterestExplorerApp.Dal.Abstract
 
         AdvancedSearchDTO AdvancedSearch(string search);
 
-        void Add(MainCategory mainCategory);
-
         int GetTotalMainCategoryCount();
     }
 }

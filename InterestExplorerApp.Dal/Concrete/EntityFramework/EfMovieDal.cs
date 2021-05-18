@@ -4,6 +4,7 @@ using InterestExplorerApp.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -220,7 +221,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             var result = (from m in _context.Movies
                          join c in _context.Categories
                          on m.CategoryId equals c.Id
-                         where m.CategoryId == categoryId && m.IMDBScore>7.0M && m.IsActive==true
+                         where m.CategoryId == categoryId && m.IMDBScore>6.0M && m.IsActive==true
                          orderby Guid.NewGuid()
                          select new MovieShortDetailsDTO
                          {
@@ -239,12 +240,13 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
 
         public Movie GetById(int Id)
         {
-            return _context.Movies.SingleOrDefault(x => x.Id == Id);
+            return _context.Movies.Include(x=>x.Category).SingleOrDefault(x => x.Id == Id);
         }
 
         public void Update(Movie movie)
         {
-            throw new NotImplementedException();
+            _context.Movies.AddOrUpdate(movie);
+            _context.SaveChanges();
         }
 
         public List<Movie> SearchByMovieName(string search)

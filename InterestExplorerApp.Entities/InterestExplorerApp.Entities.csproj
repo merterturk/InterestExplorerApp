@@ -43,12 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\BaseEntity.cs" />
+    <Compile Include="Concrete\Admin.cs" />
     <Compile Include="Concrete\MainCategory.cs" />
     <Compile Include="Concrete\Book.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Movie.cs" />
     <Compile Include="Concrete\Series.cs" />
     <Compile Include="Concrete\VideoGame.cs" />
+    <Compile Include="DTOs\AddCategoryDTO.cs" />
     <Compile Include="DTOs\AdvancedSearchDTO.cs" />
     <Compile Include="DTOs\BookLongDetailsDTO.cs" />
     <Compile Include="DTOs\BookShortDetailsDTO.cs" />

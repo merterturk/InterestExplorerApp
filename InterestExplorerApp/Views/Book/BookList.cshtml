@@ -27,6 +27,12 @@
         </div>
     </div>
 </section>
+@if (Model.Count == 0)
+{
+    <div class="alert alert-danger mt-3">Bu kategori için henüz kitap eklenmemiştir</div>
+}
+else
+{
 <div class="filter">
     <div class="container">
         <div class="row">
@@ -64,7 +70,7 @@
                 <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
                     <div class="card">
                         <div class="card__cover">
-                            <img src="@item.ImageURL" alt="">
+                            <img src="@item.ImageURL" width="200" height="230" alt="">
                             <a href="BookDetail/@item.Id" class="card__play">
                                 <i class="icon ion-ios-play"></i>
                             </a>
@@ -83,19 +89,20 @@
             <!-- paginator -->
             <div class="col-12">
                 @Html.PagedListPager((IPagedList)Model, page => Url.Action("BookList",
-                       new { categoryId = Request.QueryString["categoryId"], page }), new PagedListRenderOptions
-                       {
-                           DisplayLinkToFirstPage = PagedListDisplayMode.Never,
-                           DisplayLinkToLastPage = PagedListDisplayMode.Never,
-                           DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
-                           DisplayLinkToNextPage = PagedListDisplayMode.Always,
-                           MaximumPageNumbersToDisplay = 4
-                       })
+         new { categoryId = Request.QueryString["categoryId"], page }), new PagedListRenderOptions
+         {
+             DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+             DisplayLinkToLastPage = PagedListDisplayMode.Never,
+             DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+             DisplayLinkToNextPage = PagedListDisplayMode.Always,
+             MaximumPageNumbersToDisplay = 4
+         })
                 )
             </div>
             <!-- end paginator -->
         </div>
     </div>
 </div>
+}
 
 

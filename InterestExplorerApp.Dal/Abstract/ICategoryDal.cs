@@ -14,13 +14,15 @@ namespace InterestExplorerApp.Dal.Abstract
 
         List<CategoryDTO> GetAllByMainCategoryId(int mainCategoryId);
 
-        Category GetById(int categoryId);
+        List<Category> SearchByCategoryName(string search);
 
-        void Add(Category category);
+        Category GetById(int Id);
 
         void Update(Category category);
 
-        void Delete(int categoryId);
+        void Add(Category category);
+
+        void Delete(int Id);
 
         string GetCategoryNameByCategoryId(int categoryId);
 

@@ -1,0 +1,94 @@
+﻿@using InterestExplorerApp.Entities.Concrete;
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<VideoGame>
+@{
+    ViewBag.Title = "VideoGameList";
+
+}
+<link href="~/Areas/admin/AdminLTE-master/AdminLTE-master/dist/css/IPagedList.css" rel="stylesheet" />
+<link href="~/Content/css/toastr.js/toastr.min.css" rel="stylesheet" />
+<span id="Message" class="d-none">@TempData["AddedMessage"]</span>
+<span id="Message2" class="d-none">@TempData["DeletedMessage"]</span>
+<span id="Message3" class="d-none">@TempData["UpdatedMessage"]</span>
+<div class="content-wrapper" style="background-color:white;">
+    @using (Html.BeginForm("VideoGameList", "VideoGame", FormMethod.Get, new { area = "admin" }))
+    {
+        <div class="input-group">
+            <input type="search" class="form-control rounded" placeholder="Aranacak Oyun Adı....." aria-label="Search" name="search"
+                   aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-primary">Ara</button>
+        </div>
+    }
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-danger mt-2">Sonuç Bulunamadı</div>
+    }
+    else
+    {
+        <table class="table table-bordered mt-2">
+            <thead class="bg-primary">
+                <tr>
+                    <th>Id</th>
+                    <th>Oyun Adı</th>
+                    <th>Oyun Açıklama</th>
+                    <th>Kategori</th>
+                    <th>Yayın Yılı</th>
+                    <th>Imdb Skoru</th>
+                    <th>Resim</th>
+                    <th>VideoURL</th>
+                    <th>Oluşturulma Tarihi</th>
+                    <th>Güncelle</th>
+                    <th>Sil</th>
+                    <th>Detay</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var videoGame in Model)
+                {
+                    <tr>
+                        <td>@videoGame.Id</td>
+                        <td>@videoGame.VideoGameName</td>
+                        <td>@videoGame.VideoGameDescription.Substring(0, 50) ...</td>
+                        <td>@videoGame.Category.CategoryName</td>
+                        <td>@videoGame.ReleaseDate</td>
+                        <td>@videoGame.IMDBScore</td>
+                        <td><img src="@Url.Content(@videoGame.ImageURL)" width="100" height="100"></td>
+                        <td>@videoGame.VideoURL</td>
+                        <td>@videoGame.CreatedDate</td>
+                        <td><a class="btn btn-success" href="UpdateVideoGame/@videoGame.Id">Güncelle</a></td>
+                        <td><a class="btn btn-danger" href="DeleteVideoGame/@videoGame.Id">Sil</a></td>
+                        <td><a class="btn btn-warning" href="VideoGameDetails/@videoGame.Id">Detay</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    <div class="col-12">
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("VideoGameList","VideoGame",new {area="admin",page,search=Request.QueryString["search"]}), new PagedListRenderOptions
+    {
+
+    })
+    </div>
+</div>
+
+<script src="~/Content/js/jquery-3.3.1.min.js"></script>
+<script src="~/Content/css/toastr.js/toastr.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var message = $('#Message').text();
+        if (message != '') {
+            toastr.success(message,"Kayıt Eklendi")
+        }
+        var message2 = $('#Message2').text();
+        if (message2 != '') {
+            toastr.success(message2);
+        }
+        var message3 = $('#Message3').text();
+        if (message3 != '') {
+            toastr.success(message3);
+        }
+    });
+</script>

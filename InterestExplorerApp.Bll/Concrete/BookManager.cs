@@ -31,7 +31,7 @@ namespace InterestExplorerApp.Bll.Concrete
 
         public void Add(Book book)
         {
-            
+            _bookDal.Add(book);
         }
 
         public List<BookShortDetailsDTO> GetLastAddedRecordDetails()
@@ -57,6 +57,31 @@ namespace InterestExplorerApp.Bll.Concrete
         public string GetLastAddedBookName()
         {
             return _bookDal.GetLastAddedBookName();
+        }
+
+        public Book GetById(int Id)
+        {
+            return _bookDal.GetById(Id);
+        }
+
+        public List<Book> GetAll()
+        {
+            return _bookDal.GetAll();
+        }
+
+        public void Update(Book book)
+        {
+            _bookDal.Update(book);
+        }
+
+        public void Delete(int Id)
+        {
+            _bookDal.Delete(Id);
+        }
+
+        public List<Book> SearchByBookName(string search)
+        {
+            return _bookDal.SearchByBookName(search);
         }
     }
     

@@ -18,14 +18,30 @@ namespace InterestExplorerApp.Bll.Concrete
         {
             _categoryDal = categoryDal;
         }
+
+        public void Add(Category category)
+        {
+            _categoryDal.Add(category);
+        }
+
+        public void Delete(int Id)
+        {
+            _categoryDal.Delete(Id);
+        }
+
         public List<Category> GetAll()
         {
             return _categoryDal.GetAll();
         }
 
-        public List<Category> GetAllByMainCategoryId(int mainCategoryId)
+        public List<CategoryDTO> GetAllByMainCategoryId(int mainCategoryId)
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetAllByMainCategoryId(mainCategoryId);
+        }
+
+        public Category GetById(int Id)
+        {
+            return _categoryDal.GetById(Id);
         }
 
         public string GetCategoryNameByCategoryId(int categoryId)
@@ -38,9 +54,16 @@ namespace InterestExplorerApp.Bll.Concrete
             return _categoryDal.GetTotalCategoryCount();
         }
 
-        List<CategoryDTO> ICategoryService.GetAllByMainCategoryId(int mainCategoryId)
+        public List<Category> SearchByCategoryName(string search)
         {
-            return _categoryDal.GetAllByMainCategoryId(mainCategoryId);
+            return _categoryDal.SearchByCategoryName(search);
         }
+
+        public void Update(Category category)
+        {
+            _categoryDal.Update(category);
+        }
+
+        
     }
 }

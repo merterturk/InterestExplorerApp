@@ -29,7 +29,7 @@
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item d-flex">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
 
@@ -42,7 +42,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="#" class="brand-link">
                 <img src="~/Areas/admin/AdminLTE-master/AdminLTE-master/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8" />
                 <span class="brand-text font-weight-light">Admin Panel</span>
             </a>
@@ -62,7 +62,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                             <a href="@Url.Action("Index","Home",new {Area="admin"})" class="nav-link">
 
@@ -108,13 +108,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="@Url.Action("SeriesList","Series",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-list nav-icon"></i>
                                         <p>Dizi Listesi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="@Url.Action("AddSeries","Series",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-plus-circle nav-icon"></i>
                                         <p>Dizi Ekle</p>
                                     </a>
@@ -131,19 +131,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="@Url.Action("VideoGameList","VideoGame",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-list nav-icon"></i>
                                         <p>Video Oyun Listesi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="@Url.Action("AddVideoGame","VideoGame",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-plus-circle nav-icon"></i>
                                         <p>Video Oyun Ekle</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book-open"></i>
@@ -154,13 +154,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="@Url.Action("BookList","Book",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-list nav-icon"></i>
                                         <p>Roman Listesi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="@Url.Action("AddBook","Book",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-plus-circle nav-icon"></i>
                                         <p>Roman Ekle</p>
                                     </a>
@@ -178,20 +178,28 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="@Url.Action("CategoryList","Category",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-list nav-icon"></i>
                                         <p>Kategori Listesi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="@Url.Action("AddCategory","Category",new {Area="admin"})" class="nav-link">
                                         <i class="fas fa-plus-circle nav-icon"></i>
                                         <p>Kategori  Ekle</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="/Admin/Account/Logout" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt" aria-hidden="true"></i>
+                                <p>
+                                    Çıkış Yap   
+                                </p>
+                            </a>
                     </ul>
+
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>

@@ -1,7 +1,68 @@
 ﻿
 @{
     ViewBag.Title = "Login";
+    Layout = null;
 }
 
-<h2>Login</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap-grid.min.css">
+    <link href="~/Content/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <link href="~/Content/css/nouislider.min.css" rel="stylesheet" />
+    <link href="~/Content/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/Content/css/plyr.css" rel="stylesheet" />
+    <link href="~/Content/css/photoswipe.css" rel="stylesheet" />
+    <link href="~/Content/css/default-skin.css" rel="stylesheet" />
+    <link href="~/Content/css/mainUser.css" rel="stylesheet" />
 
+</head>
+<body class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="sign__content">
+                    <!-- authorization form -->
+                    <form method="post" class="sign__form">
+                        <a href="#" class="sign__logo">
+                            <h2 class="text-center text-white">Admin Girişi</h2>
+                        </a>
+                        <div class="sign__group">
+                            <input type="text" required name="userName" class="sign__input" placeholder="Kullanıcı Adı">
+                        </div>
+                        <div class="sign__group">
+                            <input type="password" required name="password" class="sign__input" placeholder="Şifre">
+                        </div>
+                        <button class="sign__btn" type="submit">Giriş</button>
+                        <p style="color:red; padding-top:25px;">@ViewBag.Error</p>
+                    </form>
+
+
+                    <!-- end authorization form -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="~/Content/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="~/Content/js/jquery.mousewheel.min.js"></script>
+    <script src="~/Content/js/nouislider.min.js"></script>
+    <script src="~/Content/js/wNumb.js"></script>
+    <script src="~/Content/js/jquery.morelines.min.js"></script>
+    <script src="~/Content/js/plyr.min.js"></script>
+    <script src="~/Content/js/photoswipe.min.js"></script>
+    <script src="~/Content/js/photoswipe-ui-default.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+</body>
+
+</html>

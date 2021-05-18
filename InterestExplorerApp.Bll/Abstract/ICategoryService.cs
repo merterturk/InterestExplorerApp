@@ -12,7 +12,17 @@ namespace InterestExplorerApp.Bll.Abstract
     {
         List<Category> GetAll();
 
+        Category GetById(int Id);
+
+        void Update(Category category);
+
+        void Add(Category category);
+
+        void Delete(int Id);
+
         List<CategoryDTO> GetAllByMainCategoryId(int mainCategoryId);
+
+        List<Category> SearchByCategoryName(string search);
 
         string GetCategoryNameByCategoryId(int categoryId);
 

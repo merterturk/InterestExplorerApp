@@ -144,6 +144,7 @@
     <Compile Include="Areas\admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\admin\Controllers\BookController.cs" />
+    <Compile Include="Areas\admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\MovieController.cs" />
     <Compile Include="Areas\admin\Controllers\SeriesController.cs" />
@@ -600,6 +601,7 @@
     <Content Include="Areas\admin\AdminLTE-master\AdminLTE-master\plugins\tempusdominus-bootstrap-4\css\tempusdominus-bootstrap-4.min.css" />
     <Content Include="Areas\admin\AdminLTE-master\AdminLTE-master\plugins\tempusdominus-bootstrap-4\js\tempusdominus-bootstrap-4.js" />
     <Content Include="Areas\admin\AdminLTE-master\AdminLTE-master\plugins\tempusdominus-bootstrap-4\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Content\css\MovieDetails.css" />
     <Content Include="Content\css\toastr.js\toastr.css" />
     <Content Include="Content\css\toastr.js\toastr.min.css" />
     <Content Include="Content\css\toastr.js\toastr.min.js" />
@@ -614,7 +616,6 @@
     <Content Include="Content\img\covers\0001849126001-1.jpg" />
     <Content Include="Content\img\covers\27070.jpg" />
     <Content Include="Content\img\covers\arsen-lupen-kibar-hirsiz1872384b2fe1c5d99329e97d678e15ea.jpg" />
-    <Content Include="Content\img\covers\Avatar.jpg" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
     <Content Include="Content\css\bootstrap-reboot.min.css" />
     <Content Include="Content\css\default-skin-2.html" />
@@ -632,25 +633,11 @@
     <Content Include="Content\css\plyr.css" />
     <Content Include="Content\css\preloader.html" />
     <Content Include="Content\fonts\ioniconse0a5.svg" />
-    <Content Include="Content\icon\apple-touch-icon-114x114.png" />
-    <Content Include="Content\icon\apple-touch-icon-144x144.png" />
-    <Content Include="Content\icon\apple-touch-icon-72x72.png" />
-    <Content Include="Content\icon\favicon-32x32.png" />
-    <Content Include="Content\img\covers\AvatarR.jpg" />
     <Content Include="Content\img\covers\BreakingBad.jpg" />
     <Content Include="Content\img\covers\cc2ac40a29c8cf7649dd0f1e7e0ec66c.jpg" />
-    <Content Include="Content\img\covers\id106400.jpg" />
     <Content Include="Content\img\covers\indir %281%29.jpg" />
     <Content Include="Content\img\covers\indir %282%29.jpg" />
     <Content Include="Content\img\covers\indir.jpg" />
-    <Content Include="Content\img\covers\Interstellar-2014-270x400.jpg" />
-    <Content Include="Content\img\covers\LOL_270x400.jpg" />
-    <Content Include="Content\img\gallery\project-1.jpg" />
-    <Content Include="Content\img\gallery\project-2.jpg" />
-    <Content Include="Content\img\gallery\project-3.jpg" />
-    <Content Include="Content\img\gallery\project-4.jpg" />
-    <Content Include="Content\img\gallery\project-5.jpg" />
-    <Content Include="Content\img\gallery\project-6.jpg" />
     <Content Include="Content\img\home\home__bg.jpg" />
     <Content Include="Content\img\home\home__bg2.jpg" />
     <Content Include="Content\img\home\home__bg3.jpg" />
@@ -686,9 +673,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Models\" />
-    <Folder Include="Areas\admin\Views\Book\" />
-    <Folder Include="Areas\admin\Views\Series\" />
-    <Folder Include="Areas\admin\Views\VideoGame\" />
     <Folder Include="Content\css\twitter-bootstrap\js\" />
     <Folder Include="Content\img\Book\" />
     <Folder Include="Content\img\Movie\" />
@@ -753,13 +737,28 @@
     <Content Include="Content\fonts\ioniconse0a5.ttf" />
     <Content Include="Content\fonts\ioniconse0a5.woff" />
     <Content Include="Content\fonts\ioniconse0a5.woff2" />
-    <Content Include="Areas\admin\Views\Home\Deneme.cshtml" />
     <Content Include="libman.json" />
     <Content Include="Areas\admin\Views\Account\Login.cshtml" />
     <Content Include="Areas\admin\Views\Movie\AddMovie.cshtml" />
     <Content Include="Areas\admin\Views\Movie\MovieList.cshtml" />
     <Content Include="Content\css\toastr.js\toastr.js.map" />
-    <Content Include="Areas\admin\Views\Movie\MovieUpdate.cshtml" />
+    <Content Include="Areas\admin\Views\Movie\UpdateMovie.cshtml" />
+    <Content Include="Areas\admin\Views\Movie\MovieDetails.cshtml" />
+    <Content Include="Areas\admin\Views\Series\SeriesList.cshtml" />
+    <Content Include="Areas\admin\Views\Series\AddSeries.cshtml" />
+    <Content Include="Areas\admin\Views\Series\SeriesDetails.cshtml" />
+    <Content Include="Areas\admin\Views\Series\UpdateSeries.cshtml" />
+    <Content Include="Areas\admin\Views\VideoGame\AddVideoGame.cshtml" />
+    <Content Include="Areas\admin\Views\VideoGame\VideoGameList.cshtml" />
+    <Content Include="Areas\admin\Views\VideoGame\UpdateVideoGame.cshtml" />
+    <Content Include="Areas\admin\Views\VideoGame\VideoGameDetails.cshtml" />
+    <Content Include="Areas\admin\Views\Book\BookDetails.cshtml" />
+    <Content Include="Areas\admin\Views\Book\AddBook.cshtml" />
+    <Content Include="Areas\admin\Views\Book\UpdateBook.cshtml" />
+    <Content Include="Areas\admin\Views\Book\BookList.cshtml" />
+    <Content Include="Areas\admin\Views\Category\CategoryList.cshtml" />
+    <Content Include="Areas\admin\Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Areas\admin\Views\Category\AddCategory.cshtml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

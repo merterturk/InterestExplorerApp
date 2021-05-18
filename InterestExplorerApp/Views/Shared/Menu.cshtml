@@ -8,7 +8,7 @@
                     <div class="header__content">
                         <!-- header logo -->
                         <a href="/Home/Index" class="header__nav-link">
-                            <h2 class="">INTEREST EXPLORER</h2>
+                            <h2>INTEREST EXPLORER</h2>
                         </a>
                         <!-- end header logo -->
                         <!-- header nav -->
@@ -23,9 +23,9 @@
                                     @if (item.Categories.Count > 0)
                                     {
                                         <ul class="dropdown-menu header__dropdown-menu" style="min-width:225px;" aria-labelledby="dropdownMenuMore">
-                                            @foreach (var item2 in item.Categories)
+                                            @foreach (var item2 in item.Categories.Where(x=>x.IsActive==true))
                                             {
-                                                <li><a href='@Url.Action("CategoryDetail","Home",new {maincategory=item.Id,category=item2.Id})'>@item2.CategoryName</a></li>
+                                                <li><a href='@Url.Action("CategoryDetail", "Home", new { maincategory = item.Id, category = item2.Id })'>@item2.CategoryName</a></li>
                                             }
                                         </ul>
                                     }

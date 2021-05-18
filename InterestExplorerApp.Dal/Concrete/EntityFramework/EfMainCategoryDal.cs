@@ -14,11 +14,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
     {
         private InterestExplorerContext _context = new InterestExplorerContext();
 
-        public void Add(MainCategory mainCategory)
-        {
-            _context.MainCategories.Add(mainCategory);
-            _context.SaveChanges();
-        }
+      
 
         // Movie,Series,VideoGame, Book advanced searcing 
 
@@ -81,7 +77,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
 
         public List<MainCategory> GetAll()
         {
-            return _context.MainCategories.Include("Categories").ToList();
+            return _context.MainCategories.Include(x=>x.Categories).ToList();
         }
 
         public int GetTotalMainCategoryCount()

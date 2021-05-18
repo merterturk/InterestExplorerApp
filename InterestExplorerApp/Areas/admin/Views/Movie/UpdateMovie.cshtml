@@ -1,0 +1,52 @@
+﻿@using InterestExplorerApp.Entities.Concrete;
+@model Movie
+@{
+    ViewBag.Title = "UpdateMovie";
+    List<SelectListItem> Category = ViewBag.Category;
+}
+<div class="content-wrapper" style="background-color:white;">
+    <h2 class="text-success text-center">Film Güncelleme</h2>
+    @using (Html.BeginForm("UpdateMovie", "Movie", new { area = "admin" }, FormMethod.Post, new { @style = "margin-left:15px;", enctype = "multipart/form-data", @id = "myform" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label>Film Adı</label>
+            @Html.TextBoxFor(x => x.MovieName, new { @class = "form-control", @id = "moviename" })
+            @Html.ValidationMessageFor(x => x.MovieName, "", new { @class = "text-danger" })
+            <br />
+            <label>Film Açıklama</label>
+            @Html.TextAreaFor(x => x.MovieDescription, new { @class = "form-control",@style="height:150px" })
+            @Html.ValidationMessageFor(x => x.MovieDescription, "", new { @class = "text-danger" })
+            <br />
+            <label>Kategori</label>
+            @Html.DropDownListFor(x => x.CategoryId, Category, new { @class = "form-control" })
+            <br />
+            <label>Yayın Yılı</label>
+            @Html.TextBoxFor(x => x.Year, new { @class = "form-control", @type = "number" })
+            @Html.ValidationMessageFor(x => x.Year, "", new { @class = "text-danger" })
+            <br />
+            <label>Toplam Film Süresi</label>
+            @Html.TextBoxFor(x => x.TotalTime, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.TotalTime, "", new { @class = "text-danger" })
+            <br />
+            <label>Imdb Puanı</label>
+            @Html.TextBoxFor(x => x.IMDBScore, new { @maxlength = "3", @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.IMDBScore, "", new { @class = "text-danger" })
+            <br />
+            <label>VideoURL</label>
+            @Html.TextBoxFor(x => x.VideoURL, new { @class = "form-control" })
+            <br />
+            <label>Resim</label>
+         <img src="@Url.Content(Model.ImageURL)" height="240" width="240" style="margin-left:50px;" />
+            <input type="file" name="file" />
+            @Html.HiddenFor(x=>x.CreatedDate)
+          
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success w-50 mb-5" id="mybtn">Güncelle</button>
+        </div>
+    }
+
+</div>
+
+

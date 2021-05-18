@@ -59,7 +59,7 @@ namespace InterestExplorerApp.Bll.Concrete
 
         public void Update(Movie movie)
         {
-            throw new NotImplementedException();
+            _movieDal.Update(movie);
         }
 
         public List<Movie> SearchByMovieName(string search)

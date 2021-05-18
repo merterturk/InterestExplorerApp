@@ -15,7 +15,6 @@ namespace InterestExplorerApp.Bll.Abstract
         // Movie,Series,VideoGames,Book advanced searcing
         AdvancedSearchDTO AdvancedSearch(string search);
 
-        void Add(MainCategory mainCategory);
 
         int GetTotalMainCategoryCount();
     }

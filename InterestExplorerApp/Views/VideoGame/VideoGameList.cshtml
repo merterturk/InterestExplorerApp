@@ -31,61 +31,67 @@
 </section>
 <!-- end page title -->
 <!-- filter -->
-<div class="filter">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                @using (Html.BeginForm("VideoGameList", "VideoGame", FormMethod.Get, new { @class = "filter__content" }))
-                {
-                    <div class="filter__item" id="filter__genre">
-                        <span class="filter__item-label">Filtrele:</span>
-                        <input type="hidden" name="categoryId" value="@Request.QueryString["categoryId"]" />
-                        @Html.DropDownList("filter", (List<SelectListItem>)ViewBag.Data, new { @class = "myselect btn btn-dark" })
-                    </div>
-                    <!-- end filter item -->
-                    <!-- filter item -->
-                    <!-- end filter item -->
-                    <!-- filter item -->
+@if (Model.Count == 0)
+{
+    <div class="alert alert-danger mt-3">Bu kategori için henüz oyun eklenmemiştir</div>
+}
+else
+{
+    <div class="filter">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    @using (Html.BeginForm("VideoGameList", "VideoGame", FormMethod.Get, new { @class = "filter__content" }))
+                    {
+                        <div class="filter__item" id="filter__genre">
+                            <span class="filter__item-label">Filtrele:</span>
+                            <input type="hidden" name="categoryId" value="@Request.QueryString["categoryId"]" />
+                            @Html.DropDownList("filter", (List<SelectListItem>)ViewBag.Data, new { @class = "myselect btn btn-dark" })
+                        </div>
+                        <!-- end filter item -->
+                        <!-- filter item -->
+                        <!-- end filter item -->
+                        <!-- filter item -->
 
-                    <button class="filter__btn" type="submit" id="btn">Filtrele</button>
+                        <button class="filter__btn" type="submit" id="btn">Filtrele</button>
 
-                    <!-- filter btn -->
+                        <!-- filter btn -->
 
-                    <!-- end filter btn -->
-                }
+                        <!-- end filter btn -->
+                    }
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- end filter -->
-<!-- catalog -->
-<div class="catalog">
-    <div class="container">
-        <div class="row">
-            <!-- card -->
-            @foreach (var videoGame in Model)
-            {
-                <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-                    <div class="card">
-                        <div class="card__cover">
-                            <img src="@videoGame.ImageURL" alt="">
-                            <a href="VideoGameDetail/@videoGame.Id" class="card__play">
-                                <i class="icon ion-ios-play"></i>
-                            </a>
-                        </div>
-                        <div class="card__content">
-                            <h3 class="card__title">@videoGame.VideoGameName</h3>
-                            <span class="card__category">
-                                <a>@videoGame.CategoryName</a>
+    <!-- end filter -->
+    <!-- catalog -->
+    <div class="catalog">
+        <div class="container">
+            <div class="row">
+                <!-- card -->
+                @foreach (var videoGame in Model)
+                {
+                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="@videoGame.ImageURL" width="200" height="250" alt="">
+                                <a href="VideoGameDetail/@videoGame.Id" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">@videoGame.VideoGameName</h3>
+                                <span class="card__category">
+                                    <a>@videoGame.CategoryName</a>
 
-                            </span>
-                            <span class="card__rate"><i class="icon ion-ios-star">@videoGame.IMDBScore</i></span>
+                                </span>
+                                <span class="card__rate"><i class="icon ion-ios-star">@videoGame.IMDBScore</i></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
-            <!-- end card -->
-            <!-- paginator -->
+                }
+                <!-- end card -->
+                <!-- paginator -->
                 <div class="col-12">
                     @Html.PagedListPager((IPagedList)Model,page=>Url.Action("VideoGameList",
                      new {categoryId = Request.QueryString["categoryId"],page,filter=Request.QueryString["filter"]}),new PagedListRenderOptions {
@@ -97,41 +103,42 @@
                      })
                     )
                 </div>
-            <!-- end paginator -->
+                <!-- end paginator -->
+            </div>
         </div>
     </div>
-</div>
-<!-- end catalog -->
-<!-- expected premiere -->
-<section class="section section--bg" data-bg="img/section/section.jpg">
-    <div class="container">
-        <div class="row">
-            <!-- section title -->
-            <div class="col-12">
-                <h2 class="section__title">En İyi  @TempData["VideoGameCategory"] Video Oyunları</h2>
-            </div>
-            <!-- end section title -->
-            <!-- card -->
-            @foreach (var videoGame in HighestImdbVideoGames)
-            {
-            <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-                <div class="card">
-                    <div class="card__cover">
-                        <img src="@videoGame.ImageURL" alt="">
-                        <a href="VideoGameDetail/@videoGame.Id" class="card__play">
-                            <i class="icon ion-ios-play"></i>
-                        </a>
-                    </div>
-                    <div class="card__content">
-                        <h3 class="card__title">@videoGame.VideoGameName</h3>
-                        <span class="card__category">
-                          <a>@videoGame.CategoryName</a>
-                        </span>
-                        <span class="card__rate"><i class="icon ion-ios-star"></i>@videoGame.IMDBScore</span>
-                    </div>
+    <!-- end catalog -->
+    <!-- expected premiere -->
+    <section class="section section--bg" data-bg="img/section/section.jpg">
+        <div class="container">
+            <div class="row">
+                <!-- section title -->
+                <div class="col-12">
+                    <h2 class="section__title">En İyi  @TempData["VideoGameCategory"] Video Oyunları</h2>
                 </div>
+                <!-- end section title -->
+                <!-- card -->
+                @foreach (var videoGame in HighestImdbVideoGames)
+                {
+                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="@videoGame.ImageURL" width="200" height="230" alt="">
+                                <a href="VideoGameDetail/@videoGame.Id" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">@videoGame.VideoGameName</h3>
+                                <span class="card__category">
+                                    <a>@videoGame.CategoryName</a>
+                                </span>
+                                <span class="card__rate"><i class="icon ion-ios-star"></i>@videoGame.IMDBScore</span>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
-            }
         </div>
-    </div>
-</section>
+    </section>
+}

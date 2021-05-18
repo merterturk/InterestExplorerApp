@@ -1,0 +1,29 @@
+﻿@using InterestExplorerApp.Entities.Concrete
+@model VideoGame
+@{
+    ViewBag.Title = "VideoGameDetails";
+}
+<div class="content-wrapper">
+    <h2 class="text-center text-warning">Video Oyun Detay</h2>
+    <div style="margin-left:15px;">
+        <b>Id</b>: <span>@Model.Id</span>
+        <hr />
+        <b>Oyun Adı</b>: <span>@Model.VideoGameName</span>
+        <hr />
+        <b>Oyun Açıklama</b>: <span>@Model.VideoGameDescription</span>
+        <hr />
+        <b>Kategori</b>: <span>@Model.Category.CategoryName</span>
+        <hr />
+        <b>Yayın Yılı</b>: <span>@Model.ReleaseDate</span>
+        <hr />      
+        <b>Imdb Skoru</b>: <span>@Model.IMDBScore</span>
+        <hr />
+        <b>Resim</b>:
+        <img style="margin-left:55px;" src="@Url.Content(Model.ImageURL)" />
+        <hr />
+        <b>VideoURL</b>: <span>@Model.VideoURL</span>
+        <hr />
+        <b>Oluşturulma Tarihi</b>: <span>@Model.CreatedDate</span>
+        <hr />
+    </div>
+</div>

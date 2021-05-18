@@ -1,4 +1,5 @@
-﻿using InterestExplorerApp.Entities.DTOs;
+﻿using InterestExplorerApp.Entities.Concrete;
+using InterestExplorerApp.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,16 @@ namespace InterestExplorerApp.Dal.Abstract
 {
    public interface ISeriesDal
     {
+        Series GetById(int Id);
+
+        List<Series> GetAll();
+
+        void Add(Series series);
+
+        void Update(Series series);
+
+        void Delete(int Id);
+
         List<SeriesShortDetailsDTO> GetAllSeriesDetailsByCategoryId(int categoryId);
 
         SeriesLongDetailsDTO GetAllSeriesDetailsBySeriesId(int Id);
@@ -22,6 +33,8 @@ namespace InterestExplorerApp.Dal.Abstract
         List<SeriesShortDetailsDTO> GetSeriesDetailsByFilter(short filter, int categoryId);
 
         List<SeriesShortDetailsDTO> GetRandomSeriesDetailsByCategoryId(int categoryId);
+
+        List<Series> SearchBySeriesName(string search);
 
         int GetTotalSeriesCount();
 
