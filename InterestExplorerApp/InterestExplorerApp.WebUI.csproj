@@ -601,6 +601,7 @@
     <Content Include="Areas\admin\AdminLTE-master\AdminLTE-master\plugins\tempusdominus-bootstrap-4\css\tempusdominus-bootstrap-4.min.css" />
     <Content Include="Areas\admin\AdminLTE-master\AdminLTE-master\plugins\tempusdominus-bootstrap-4\js\tempusdominus-bootstrap-4.js" />
     <Content Include="Areas\admin\AdminLTE-master\AdminLTE-master\plugins\tempusdominus-bootstrap-4\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Content\css\mainUsers.css" />
     <Content Include="Content\css\MovieDetails.css" />
     <Content Include="Content\css\toastr.js\toastr.css" />
     <Content Include="Content\css\toastr.js\toastr.min.css" />
@@ -624,7 +625,6 @@
     <Content Include="Content\css\ionicons.min.css" />
     <Content Include="Content\css\jquery.mCustomScrollbar.min.css" />
     <Content Include="Content\css\main.css" />
-    <Content Include="Content\css\mainUser.css" />
     <Content Include="Content\css\mCSB_buttons.html" />
     <Content Include="Content\css\nouislider.min.css" />
     <Content Include="Content\css\owl.carousel.min.css" />
