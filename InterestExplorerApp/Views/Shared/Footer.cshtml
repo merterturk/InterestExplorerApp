@@ -13,7 +13,7 @@
                     @if (item.Categories.Count > 0)
                     {
                         <ul class="footer__list">
-                            @foreach (var item2 in item.Categories)
+                            @foreach (var item2 in item.Categories.Where(x=>x.IsActive==true))
                             {
                                 <li><a href='@Url.Action("CategoryDetail", "Home", new { maincategory = item.Id, category = item2.Id })'>@item2.CategoryName</a></li>
                             }

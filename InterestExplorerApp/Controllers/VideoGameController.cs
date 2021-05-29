@@ -26,8 +26,8 @@ namespace InterestExplorerApp.WebUI.Controllers
             }
             List<SelectListItem> selectlist = new List<SelectListItem>
             {
-                       new SelectListItem{Text="A-Z Film ismine göre sırala",Value="15030"},
-                       new SelectListItem{Text="Z-A Film ismine göre sırala",Value="15040"},
+                       new SelectListItem{Text="A-Z Video Oyun ismine göre sırala",Value="15030"},
+                       new SelectListItem{Text="Z-A Video Oyun ismine göre sırala",Value="15040"},
                        new SelectListItem{Text="IMDB puanına göre yüksekten düşüğe sırala",Value="15050"},
                        new SelectListItem{Text="IMDB puanına göre düşükten yükseğe sırala",Value="15060"},
                        new SelectListItem{Text="Yayın yılına göre en son çıkandan ilk çıkana göre sırala",Value="15070"},
