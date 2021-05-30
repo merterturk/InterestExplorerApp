@@ -39,9 +39,9 @@ namespace InterestExplorerApp.Bll.Concrete
            return  _videoGameDal.GetAllVideoGameDetailsByCategoryId(categoryId);
         }
 
-        public VideoGameLongDetailsDTO GetAllVideoGameDetailsByVideoGameId(int Id)
+        public VideoGameLongDetailsDTO GetVideoGameDetailsByVideoGameId(int Id)
         {
-            return _videoGameDal.GetAllVideoGameDetailsByVideoGameId(Id);
+            return _videoGameDal.GetVideoGameDetailsByVideoGameId(Id);
         }
 
         public VideoGame GetById(int Id)

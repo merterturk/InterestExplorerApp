@@ -22,7 +22,7 @@ namespace InterestExplorerApp.Bll.Abstract
 
         List<VideoGameShortDetailsDTO> GetAllVideoGameDetailsByCategoryId(int categoryId);
 
-        VideoGameLongDetailsDTO GetAllVideoGameDetailsByVideoGameId(int Id);
+        VideoGameLongDetailsDTO GetVideoGameDetailsByVideoGameId(int Id);
 
         List<VideoGameShortDetailsDTO> GetLastAddedRecordDetails();
 

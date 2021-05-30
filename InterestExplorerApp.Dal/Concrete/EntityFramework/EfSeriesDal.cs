@@ -54,7 +54,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             return result.AsNoTracking().ToList();
         }
 
-        public SeriesLongDetailsDTO GetAllSeriesDetailsBySeriesId(int Id)
+        public SeriesLongDetailsDTO GetSeriesDetailsBySeriesId(int Id)
         {
             var result = (from s in _context.Series
                           join c in _context.Categories
@@ -149,7 +149,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             var result = (from s in _context.Series
                           join c in _context.Categories
                           on s.CategoryId equals c.Id
-                          where s.CategoryId == categoryId && s.IMDBScore > 7.0M && s.IsActive==true
+                          where s.CategoryId == categoryId && s.IMDBScore > 6.0M && s.IsActive==true
                           orderby Guid.NewGuid()
                           select new SeriesShortDetailsDTO
                           {

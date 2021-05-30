@@ -52,7 +52,7 @@ namespace InterestExplorerApp.WebUI.Controllers
         {
             if (Id.HasValue)
             {
-                var result = _videoGameService.GetAllVideoGameDetailsByVideoGameId(Id.Value);
+                var result = _videoGameService.GetVideoGameDetailsByVideoGameId(Id.Value);
                 TempData["GetRandomVideoGame"] = _videoGameService.GetRandomVideoGameDetailsByCategoryId(result.CategoryId);
                 return View(result);
             }

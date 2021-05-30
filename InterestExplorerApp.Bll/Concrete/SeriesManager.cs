@@ -39,9 +39,9 @@ namespace InterestExplorerApp.Bll.Concrete
             return _seriesDal.GetAllSeriesDetailsByCategoryId(categoryId);
         }
 
-        public SeriesLongDetailsDTO GetAllSeriesDetailsBySeriesId(int Id)
+        public SeriesLongDetailsDTO GetSeriesDetailsBySeriesId(int Id)
         {
-            return _seriesDal.GetAllSeriesDetailsBySeriesId(Id);
+            return _seriesDal.GetSeriesDetailsBySeriesId(Id);
         }
 
         public Series GetById(int Id)

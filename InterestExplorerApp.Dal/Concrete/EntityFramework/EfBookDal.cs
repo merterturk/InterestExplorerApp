@@ -37,7 +37,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             return _context.Books.Where(b => b.IsActive == true).Include(x => x.Category).AsNoTracking().ToList();
         }
 
-        public BookLongDetailsDTO GetAllBookDetailsByBookId(int Id)
+        public BookLongDetailsDTO GetBookDetailsByBookId(int Id)
         {
             var result = (from b in _context.Books
                           join c in _context.Categories

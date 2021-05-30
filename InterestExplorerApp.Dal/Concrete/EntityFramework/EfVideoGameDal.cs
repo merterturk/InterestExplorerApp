@@ -54,7 +54,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             return result.AsNoTracking().ToList();
         }
 
-        public VideoGameLongDetailsDTO GetAllVideoGameDetailsByVideoGameId(int Id)
+        public VideoGameLongDetailsDTO GetVideoGameDetailsByVideoGameId(int Id)
         {
             var result = (from v in _context.VideoGames
                          join c in _context.Categories
@@ -147,7 +147,7 @@ namespace InterestExplorerApp.Dal.Concrete.EntityFramework
             var result = (from v in _context.VideoGames
                           join c in _context.Categories
                           on v.CategoryId equals c.Id
-                          where v.CategoryId == categoryId && v.IMDBScore > 7.0M && v.IsActive == true
+                          where v.CategoryId == categoryId && v.IMDBScore > 6.0M && v.IsActive == true
                           orderby Guid.NewGuid()
                           select new VideoGameShortDetailsDTO
                           {

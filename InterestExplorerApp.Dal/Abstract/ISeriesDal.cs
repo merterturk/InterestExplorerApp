@@ -22,7 +22,7 @@ namespace InterestExplorerApp.Dal.Abstract
 
         List<SeriesShortDetailsDTO> GetAllSeriesDetailsByCategoryId(int categoryId);
 
-        SeriesLongDetailsDTO GetAllSeriesDetailsBySeriesId(int Id);
+        SeriesLongDetailsDTO GetSeriesDetailsBySeriesId(int Id);
 
         List<SeriesShortDetailsDTO> GetLastAddedRecordDetails();
 

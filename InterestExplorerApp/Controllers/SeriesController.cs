@@ -53,7 +53,7 @@ namespace InterestExplorerApp.WebUI.Controllers
         {
             if (Id.HasValue)
             {
-                var result = _seriesService.GetAllSeriesDetailsBySeriesId(Id.Value);
+                var result = _seriesService.GetSeriesDetailsBySeriesId(Id.Value);
                 TempData["GetRandomSeries"] = _seriesService.GetRandomSeriesDetailsByCategoryId(result.CategoryId);
                 return View(result);
             }

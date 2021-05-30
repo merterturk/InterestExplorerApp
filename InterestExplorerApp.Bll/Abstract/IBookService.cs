@@ -22,7 +22,7 @@ namespace InterestExplorerApp.Bll.Abstract
 
         List<BookShortDetailsDTO> GetAllBookDetailsByCategoryId(int categoryId);
 
-        BookLongDetailsDTO GetAllBookDetailsByBookId(int Id);
+        BookLongDetailsDTO GetBookDetailsByBookId(int Id);
 
         List<BookShortDetailsDTO> GetLastAddedRecordDetails();
 

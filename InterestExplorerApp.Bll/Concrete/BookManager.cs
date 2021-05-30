@@ -24,9 +24,9 @@ namespace InterestExplorerApp.Bll.Concrete
             return _bookDal.GetAllBookDetailsByCategoryId(categoryId);
         }
 
-        public BookLongDetailsDTO GetAllBookDetailsByBookId(int Id)
+        public BookLongDetailsDTO GetBookDetailsByBookId(int Id)
         {
-            return _bookDal.GetAllBookDetailsByBookId(Id);
+            return _bookDal.GetBookDetailsByBookId(Id);
         }
 
         public void Add(Book book)

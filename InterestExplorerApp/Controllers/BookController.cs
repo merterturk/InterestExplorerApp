@@ -27,8 +27,8 @@ namespace InterestExplorerApp.WebUI.Controllers
             }
             List<SelectListItem> selectlist = new List<SelectListItem>
             {
-                       new SelectListItem{Text="A-Z Film ismine göre sırala",Value="15030"},
-                       new SelectListItem{Text="Z-A Film ismine göre sırala",Value="15040"},
+                       new SelectListItem{Text="A-Z Roman ismine göre sırala",Value="15030"},
+                       new SelectListItem{Text="Z-A Roman ismine göre sırala",Value="15040"},
                        new SelectListItem{Text="Yayın yılına göre en son çıkandan ilk çıkana göre sırala",Value="15050"},
                        new SelectListItem{Text="Yayın yılına göre ilk çıkandan en son çıkana göre sırala",Value="15060"}
             };
@@ -51,7 +51,7 @@ namespace InterestExplorerApp.WebUI.Controllers
         {
             if (Id.HasValue)
             {
-                var result = _bookService.GetAllBookDetailsByBookId(Id.Value);
+                var result = _bookService.GetBookDetailsByBookId(Id.Value);
                 TempData["GetRandomBook"] = _bookService.GetRandomBookDetailsByCategoryId(result.CategoryId);
                 return View(result);
             }

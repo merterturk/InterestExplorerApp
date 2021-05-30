@@ -18,7 +18,7 @@
             <div class="col-12">
                 <div class="section__wrap">
                     <!-- section title -->
-                    <h2 class="section__title">@TempData["BookCategory"] Kitapları</h2>
+                    <h2 class="section__title">@TempData["BookCategory"] Romanları</h2>
                     <!-- end section title -->
                     <!-- breadcrumb -->
                     <!-- end breadcrumb -->
@@ -40,7 +40,7 @@ else
                 @using (Html.BeginForm("BookList", "Book", FormMethod.Get, new { @class = "filter__content" }))
                 {
                     <div class="filter__item" id="filter__genre">
-                        <span class="filter__item-label">Filtrele:</span>
+                        <span class="filter__item-label">Sırala:</span>
                         <input type="hidden" name="categoryId" value="@Request.QueryString["categoryId"]" />
                         @Html.DropDownList("filter", (List<SelectListItem>)ViewBag.Data, new { @class = "myselect btn btn-dark" })
                     </div>
@@ -49,7 +49,7 @@ else
                     <!-- end filter item -->
                     <!-- filter item -->
 
-                    <button class="filter__btn" type="submit" id="btn">Filtrele</button>
+                    <button class="filter__btn" type="submit" id="btn">Sırala</button>
 
                     <!-- filter btn -->
 
